@@ -1,3 +1,10 @@
 body {
     background-color: rgb(97, 97, 97);
+    margin: 0;
+
+    .main {
+        width: 100vw;
+        min-height: 100vh;
+        background: red;
+    }
 }

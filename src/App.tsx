@@ -7,11 +7,13 @@ import "./App.scss";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/dashboard" element={<h1>Dashboard</h1>}></Route>
-      </Routes>
-    </Router>
+    <div className="main">
+      <Router>
+        <Routes>
+          <Route path="/dashboard" element={<h1>Dashboard</h1>}></Route>
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
