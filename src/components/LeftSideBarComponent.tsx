@@ -2,7 +2,7 @@
 import React from "react";
 
 // CSS
-import "./scss/LeftSideBarComponent.scss";
+import "./style/LeftSideBarComponent.scss";
 
 const LeftSideBarComponent = () => {
   return (

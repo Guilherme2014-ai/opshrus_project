@@ -1,6 +1,8 @@
 // Dependencies
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Nav from "./components/Nav";
+
+// Components
+import { AboutUsComponent } from "./components/AboutUsComponent";
 
 // CSS
 import "./App.scss";
@@ -8,9 +10,9 @@ import "./App.scss";
 function App() {
   return (
     <div className="main">
-      <Nav />
       <Router>
         <Routes>
+          <Route path="/about_us" element={<AboutUsComponent />}></Route>
           <Route path="/dashboard" element={<h1>Dashboard</h1>}></Route>
         </Routes>
       </Router>

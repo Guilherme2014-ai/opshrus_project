@@ -5,7 +5,7 @@ import React from "react";
 import { LeftSideBarComponent } from "./LeftSideBarComponent";
 
 // CSS
-import "./scss/DashboardComponent.scss";
+import "./style/DashboardComponent.scss";
 
 const DashboardComponent = () => {
   return (
