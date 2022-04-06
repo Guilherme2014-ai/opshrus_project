@@ -9,10 +9,12 @@ import iconsPath from "../defaults/iconsPath";
 
 // CSS
 import "./style/DashboardComponent.scss";
+import { SecondNavComponent } from "./SecondNavComponent";
 
 const DashboardComponent = () => {
   return (
     <section className="main_dashboard_section">
+      <SecondNavComponent />
       <LeftSideBarComponent
         divisors={[
           {

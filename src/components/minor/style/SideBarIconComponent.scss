@@ -9,6 +9,12 @@
 
     margin-top: 20px;
 
+    cursor: pointer;
+    
+    &:hover small {
+        color: white;
+    }
+
     small {
         color: $thirdColor;
         margin-left: 10px;
