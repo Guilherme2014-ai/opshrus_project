@@ -13,4 +13,4 @@ const SecondNavComponent = () => {
   );
 };
 
-export { NavComponent };
+export { SecondNavComponent };

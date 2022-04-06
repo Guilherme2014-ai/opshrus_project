@@ -6,6 +6,7 @@ import { AboutUsComponent } from "./components/AboutUsComponent";
 
 // CSS
 import "./App.scss";
+import { DashboardComponent } from "./components/DashboardComponent";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/about_us" element={<AboutUsComponent />}></Route>
-          <Route path="/dashboard" element={<h1>Dashboard</h1>}></Route>
+          <Route path="/dashboard" element={<DashboardComponent />}></Route>
         </Routes>
       </Router>
     </div>

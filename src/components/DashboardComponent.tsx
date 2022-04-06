@@ -9,8 +9,8 @@ import "./style/DashboardComponent.scss";
 
 const DashboardComponent = () => {
   return (
-    <section>
-      <LeftSideBarComponent />
+    <section className="main_dashboard_section">
+      <h1>sasdasd</h1>
     </section>
   );
 };
