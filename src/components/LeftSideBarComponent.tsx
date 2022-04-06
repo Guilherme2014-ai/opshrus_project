@@ -11,13 +11,13 @@ import { idUniqueV2 } from "id-unique-protocol";
 
 const LeftSideBarComponent = ({ divisors }: { divisors: IDivisor[] }) => {
   return (
-    <div>
+    <div className="leftsidebar">
       {divisors.map((divisor) => {
         const { title, sideBarsIcons } = divisor;
 
         return (
-          <div key={idUniqueV2()}>
-            <h1>{title}</h1>
+          <div key={idUniqueV2()} className="leftsidebar_divisor">
+            <h1 className="divisor_title-sidebar">{title}</h1>
             {sideBarsIcons.map((sideBarIcon) => {
               const { title, svgLink } = sideBarIcon;
 

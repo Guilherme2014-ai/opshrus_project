@@ -1,6 +1,9 @@
 @import "../utils_styles/variables";
 
+body {
+    background-color: $primaryColor;
+}
+
 .main_dashboard_section {
     height: 100vh;
-    background-color: $primaryColor;
 }

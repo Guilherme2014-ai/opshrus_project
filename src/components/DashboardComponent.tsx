@@ -28,6 +28,19 @@ const DashboardComponent = () => {
               },
             ],
           },
+          {
+            title: "Creators",
+            sideBarsIcons: [
+              {
+                title: "home",
+                svgLink: iconsPath.home,
+              },
+              {
+                title: "Search",
+                svgLink: iconsPath.search,
+              },
+            ],
+          },
         ]}
       />
     </section>

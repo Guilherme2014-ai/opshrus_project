@@ -1,12 +1,15 @@
-.main_nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 60px;
-    font-family: 'Lato', sans-serif;
+@import "../utils_styles//variables";
 
-    h2 {
-        font-family: 'Roboto', sans-serif;
-    }
+.leftsidebar {
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.leftsidebar_divisor {
+    margin-top: 20px;
+}
+
+.divisor_title-sidebar {
+    color: $thirdColor;
+    font-family: 'Roboto', sans-serif;
 }
