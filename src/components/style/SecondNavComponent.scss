@@ -18,4 +18,14 @@
         font-size: 1.8pc;
         font-family: 'Roboto', sans-serif;
     }
+
+    div {
+        display: flex;
+        align-items: center;
+        color: white;
+
+        small {
+            margin-right: 30px;
+        }
+    }
 }
