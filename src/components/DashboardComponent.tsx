@@ -28,18 +28,38 @@ const DashboardComponent = () => {
                 title: "Search",
                 svgLink: iconsPath.search,
               },
+              {
+                title: "Browse",
+                svgLink: iconsPath.browse,
+              },
+              {
+                title: "Featured",
+                svgLink: iconsPath.start,
+              },
+              {
+                title: "Featured",
+                svgLink: iconsPath.start,
+              },
             ],
           },
           {
-            title: "Creators",
+            title: "Creator Menu",
             sideBarsIcons: [
               {
-                title: "home",
-                svgLink: iconsPath.home,
+                title: "Profile",
+                svgLink: iconsPath.user,
               },
               {
-                title: "Search",
-                svgLink: iconsPath.search,
+                title: "Projects",
+                svgLink: iconsPath.boxes,
+              },
+              {
+                title: "Clients",
+                svgLink: iconsPath.users,
+              },
+              {
+                title: "Featured",
+                svgLink: iconsPath.start,
               },
             ],
           },
