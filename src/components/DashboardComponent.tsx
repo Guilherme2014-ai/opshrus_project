@@ -7,11 +7,14 @@ import { SecondNavComponent } from "./SecondNavComponent";
 
 // Defaults
 import iconsPath from "../defaults/iconsPath";
+import users from "../mockedData/users";
 
 // CSS
 import "./style/DashboardComponent.scss";
 
 const DashboardComponent = () => {
+  const user = users.getUserByName("Thiago");
+
   return (
     <section className="main_dashboard_section">
       <SecondNavComponent />
@@ -75,7 +78,26 @@ const DashboardComponent = () => {
             <li>Complete Projects</li>
             <li>Messages</li>
           </ul>
-          <div></div>
+          <div>
+            {user?.projects.map((project) => {
+              // Tipar tudo isso
+              const { imageLink, name } = project;
+              return (
+                <div
+                  className="project"
+                  style={{
+                    backgroundImage: `url(${imageLink})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    width: "300px",
+                    height: "200px",
+                  }}
+                >
+                  <h1>{name}</h1>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

@@ -38,11 +38,36 @@ body {
             }
 
             div {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
                 width: 90%;
                 margin-top: 23px;
                 background-color: $secondColor;
                 border-radius: 10px;
-                height: 50vh;
+
+                padding: 20px;
+
+                .project {
+                    cursor: pointer;
+                    transition: all ease 0.3s;
+
+
+                    margin-right: 12px;
+
+                    text-align: center;
+
+                    h1 {
+                        font-family: 'Quicksand', sans-serif;
+                        color: rgb(255, 255, 255);
+                        text-shadow: black 2px 5px;
+                    }
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
             }
         }
     }
