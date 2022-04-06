@@ -1,10 +1,26 @@
-.about_us_main {
-    background-color: rgb(97, 97, 97);
+.aboutUsMain {
     margin: 0;
 
-    .main_area {
+    &__mainArea {
         width: 100vw;
-        min-height: 100vh;
+        height: 100vh;
         background: #715AFF;
+
+        &__mainText {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__container {
+                width: 25vh;
+                min-height: 25vw;
+                background: green;
+            }
+        }
+
     }
 }

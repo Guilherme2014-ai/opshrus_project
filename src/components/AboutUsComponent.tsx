@@ -9,10 +9,14 @@ import "./style/AboutUsComponent.scss";
 
 const AboutUsComponent = () => {
   return (
-    <section className="about_us_main">
+    <section className="aboutUsMain">
       <Nav />
 
-      <div className="main_area"></div>
+      <div className="aboutUsMain__mainArea">
+        <div className="aboutUsMain__mainArea__mainText">
+          <div className="aboutUsMain__mainArea__mainText__container"></div>
+        </div>
+      </div>
     </section>
   );
 };
