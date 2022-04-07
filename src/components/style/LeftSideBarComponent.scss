@@ -1,0 +1,15 @@
+@import "../utils_styles//variables";
+
+.mainLeftSideBar {
+    padding: 20px;
+}
+
+.mainLeftSideBar__divisor {
+    margin-top: 20px;
+    width: 180px;
+
+    h1 {
+        color: $thirdColor;
+        font-family: 'Roboto', sans-serif;
+    }
+}
