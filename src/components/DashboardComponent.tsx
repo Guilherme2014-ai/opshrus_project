@@ -1,5 +1,6 @@
 // Dependencies
 import React from "react";
+import { idUniqueV2 } from "id-unique-protocol";
 
 // Components
 import { LeftSideBarComponent } from "./LeftSideBarComponent";
@@ -84,6 +85,7 @@ const DashboardComponent = () => {
               const { imageLink, name } = project;
               return (
                 <div
+                  key={idUniqueV2()}
                   className="mainDashboard__ContentArea__ProjectsDashboard__ProjectImage"
                   style={{
                     backgroundImage: `url(${imageLink})`,

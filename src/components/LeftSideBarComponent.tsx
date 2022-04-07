@@ -23,7 +23,13 @@ const LeftSideBarComponent = ({ divisors }: { divisors: IDivisor[] }) => {
             {sideBarsIcons.map((sideBarIcon) => {
               const { title, svgLink } = sideBarIcon;
 
-              return <SideBarIconComponent title={title} svgLink={svgLink} />;
+              return (
+                <SideBarIconComponent
+                  title={title}
+                  svgLink={svgLink}
+                  key={idUniqueV2()}
+                />
+              );
             })}
           </div>
         );

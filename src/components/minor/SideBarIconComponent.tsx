@@ -2,7 +2,7 @@
 import React from "react";
 import { idUniqueV2 } from "id-unique-protocol";
 
-// Components
+// Interfaces
 import ISideBarIconComponent from "../../interfaces/ISideBarIconComponent";
 
 // CSS
@@ -10,8 +10,9 @@ import "./style/SideBarIconComponent.scss";
 
 const SideBarIconComponent = ({ svgLink, title }: ISideBarIconComponent) => {
   return (
-    <div key={idUniqueV2()} className="icon_sidebar_icon_title">
+    <div className="icon_sidebar_icon_title" key={idUniqueV2()}>
       <svg
+        key={idUniqueV2()}
         xmlns="http://www.w3.org/2000/svg"
         width="35"
         height="36"
