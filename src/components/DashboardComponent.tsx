@@ -16,10 +16,10 @@ const DashboardComponent = () => {
   const user = users.getUserByName("Thiago");
 
   return (
-    <section className="main_dashboard_section">
+    <section className="mainDashboard">
       <SecondNavComponent />
 
-      <div className="content_area">
+      <div className="mainDashboard__ContentArea">
         {" "}
         <LeftSideBarComponent
           divisors={[
@@ -71,7 +71,7 @@ const DashboardComponent = () => {
             },
           ]}
         />
-        <div className="projects_dashboard">
+        <div className="mainDashboard__ContentArea__ProjectsDashboard">
           <h1>Dashboard</h1>
           <ul>
             <li>Ongoing Projects</li>
@@ -84,7 +84,7 @@ const DashboardComponent = () => {
               const { imageLink, name } = project;
               return (
                 <div
-                  className="project"
+                  className="mainDashboard__ContentArea__ProjectsDashboard__ProjectImage"
                   style={{
                     backgroundImage: `url(${imageLink})`,
                     backgroundSize: "cover",

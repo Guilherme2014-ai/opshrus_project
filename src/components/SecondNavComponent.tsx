@@ -14,7 +14,7 @@ const SecondNavComponent = () => {
   const user = users.getUserByName("Thiago");
 
   return (
-    <nav className="main_nav">
+    <nav className="mainNav">
       <h2>Contenta</h2>
       <div>
         <small>{user?.name.toLocaleUpperCase()}</small>{" "}

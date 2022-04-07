@@ -1,23 +1,25 @@
 // Dependencies
 import React from "react";
+import { idUniqueV2 } from "id-unique-protocol";
+
+// Components
+import { SideBarIconComponent } from "./minor/SideBarIconComponent";
 
 // Interfaces
 import IDivisor from "../interfaces/IDivisor";
 
 // CSS
 import "./style/LeftSideBarComponent.scss";
-import { SideBarIconComponent } from "./minor/SideBarIconComponent";
-import { idUniqueV2 } from "id-unique-protocol";
 
 const LeftSideBarComponent = ({ divisors }: { divisors: IDivisor[] }) => {
   return (
-    <div className="leftsidebar">
+    <div className="mainLeftSideBar">
       {divisors.map((divisor) => {
         const { title, sideBarsIcons } = divisor;
 
         return (
-          <div key={idUniqueV2()} className="leftsidebar_divisor">
-            <h1 className="divisor_title-sidebar">{title}</h1>
+          <div key={idUniqueV2()} className="mainLeftSideBar__divisor">
+            <h1 className="mainLeftSideBar__divisor__title">{title}</h1>
             {sideBarsIcons.map((sideBarIcon) => {
               const { title, svgLink } = sideBarIcon;
 
