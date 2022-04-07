@@ -7,11 +7,18 @@ import { SideBarIconComponent } from "./minor/SideBarIconComponent";
 
 // Interfaces
 import IDivisor from "../interfaces/IDivisor";
+import TAllPagesLeftBar from "../interfaces/TAllPagesLeftBar";
 
 // CSS
 import "./style/LeftSideBarComponent.scss";
 
-const LeftSideBarComponent = ({ divisors }: { divisors: IDivisor[] }) => {
+const LeftSideBarComponent = ({
+  divisors,
+  pageSelected,
+}: {
+  divisors: IDivisor[];
+  pageSelected: TAllPagesLeftBar;
+}) => {
   return (
     <div className="mainLeftSideBar">
       {divisors.map((divisor) => {
@@ -26,6 +33,7 @@ const LeftSideBarComponent = ({ divisors }: { divisors: IDivisor[] }) => {
               return (
                 <SideBarIconComponent
                   title={title}
+                  pageSelected={pageSelected}
                   svgLink={svgLink}
                   key={idUniqueV2()}
                 />

@@ -1,4 +1,7 @@
+import TAllPagesLeftBar from "./TAllPagesLeftBar";
+
 export default interface ISideBarIconComponent {
-  svgLink: string;
   title: string;
+  svgLink: string;
+  pageSelected?: TAllPagesLeftBar;
 }

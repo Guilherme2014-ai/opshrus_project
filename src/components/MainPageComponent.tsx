@@ -18,6 +18,11 @@ import "./style/MainPageComponent.scss";
 // Others
 const pages = {
   home: <DashboardComponent />,
+  search: <h1>Search</h1>,
+  featured: <h1>Featured</h1>,
+  profile: <h1>Profile</h1>,
+  projects: <h1>Projects</h1>,
+  clients: <h1>Clients</h1>,
   browse: <h1>Browse</h1>,
 };
 
@@ -29,12 +34,13 @@ const MainPageComponent = ({ namePage }: IMainPage) => {
       <div className="mainPage__ContentArea">
         {" "}
         <LeftSideBarComponent
+          pageSelected={namePage}
           divisors={[
             {
               title: "Menu",
               sideBarsIcons: [
                 {
-                  title: "home",
+                  title: "Home",
                   svgLink: iconsPath.home,
                 },
                 {

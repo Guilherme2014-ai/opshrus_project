@@ -1,5 +1,5 @@
-type TNamePage = "browse" | "home";
+import TAllPagesLeftBar from "./TAllPagesLeftBar";
 
 export default interface IMainPage {
-  namePage: TNamePage;
+  namePage: TAllPagesLeftBar;
 }

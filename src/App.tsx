@@ -18,6 +18,30 @@ function App() {
             path="/home"
             element={<MainPageComponent namePage="home" />}
           ></Route>
+          <Route
+            path="/search"
+            element={<MainPageComponent namePage="search" />}
+          ></Route>
+          <Route
+            path="/browse"
+            element={<MainPageComponent namePage="browse" />}
+          ></Route>
+          <Route
+            path="/featured"
+            element={<MainPageComponent namePage="featured" />}
+          ></Route>
+          <Route
+            path="/profile"
+            element={<MainPageComponent namePage="profile" />}
+          ></Route>
+          <Route
+            path="/projects"
+            element={<MainPageComponent namePage="projects" />}
+          ></Route>
+          <Route
+            path="/clients"
+            element={<MainPageComponent namePage="clients" />}
+          ></Route>
         </Routes>
       </Router>
     </div>
