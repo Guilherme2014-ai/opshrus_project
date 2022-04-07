@@ -6,7 +6,7 @@ import { AboutUsComponent } from "./components/AboutUsComponent";
 
 // CSS
 import "./App.scss";
-import { DashboardComponent } from "./components/DashboardComponent";
+import { MainPageComponent } from "./components/MainPageComponent";
 
 function App() {
   return (
@@ -14,7 +14,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/about_us" element={<AboutUsComponent />}></Route>
-          <Route path="/dashboard" element={<DashboardComponent />}></Route>
+          <Route
+            path="/home"
+            element={<MainPageComponent namePage="home" />}
+          ></Route>
         </Routes>
       </Router>
     </div>
