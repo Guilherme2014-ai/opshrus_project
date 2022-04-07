@@ -10,14 +10,14 @@ import "./style/SideBarIconComponent.scss";
 
 const SideBarIconComponent = ({ svgLink, title }: ISideBarIconComponent) => {
   return (
-    <div className="icon_sidebar_icon_title" key={idUniqueV2()}>
+    <div className="sideBar__iconArea" key={idUniqueV2()}>
       <svg
         key={idUniqueV2()}
+        className="sideBar__icon"
         xmlns="http://www.w3.org/2000/svg"
         width="35"
         height="36"
         fill="white"
-        className="sidebar_icon"
         viewBox="0 0 16 16"
       >
         <path d={svgLink} />

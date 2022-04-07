@@ -1,6 +1,6 @@
 @import "../../utils_styles/variables";
 
-.icon_sidebar_icon_title {
+.sideBar__iconArea {
     display: flex;
     align-items: center;
     
@@ -10,19 +10,19 @@
     margin-top: 20px;
 
     cursor: pointer;
-    
-    &:hover small {
-        color: white;
-    }
 
     small {
         color: $thirdColor;
         margin-left: 10px;
     }
-}
+    
+    &:hover small {
+        color: white
+    }
 
-.sidebar_icon {
-    border-radius: 5px;
-    padding: 7px;
-    background-color: $secondColor;
+    .sideBar__icon {
+        border-radius: 5px;
+        padding: 7px;
+        background-color: $secondColor;
+    }
 }
