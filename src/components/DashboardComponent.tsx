@@ -2,6 +2,9 @@
 import React from "react";
 import { idUniqueV2 } from "id-unique-protocol";
 
+// Interfaces
+import IUserSession from "../interfaces/IUserSession";
+
 // Defaults
 import users from "../mockedData/users";
 
@@ -9,7 +12,7 @@ import users from "../mockedData/users";
 import "./style/DashboardComponent.scss";
 
 const DashboardComponent = () => {
-  const user = users.getUserByName("Thiago");
+  const user = users.getUserByName("Thiago") as unknown as IUserSession;
 
   return (
     <div className="mainDashboard__ContentArea__ProjectsDashboard">
@@ -20,9 +23,9 @@ const DashboardComponent = () => {
         <li>Messages</li>
       </ul>
       <div>
-        {user?.projects.map((project) => {
-          // Tipar tudo isso
+        {user.projects.map((project) => {
           const { imageLink, name } = project;
+
           return (
             <div
               key={idUniqueV2()}
