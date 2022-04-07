@@ -1,5 +1,6 @@
 // Dependencie
 import React from "react";
+import { Link } from "react-router-dom";
 import { idUniqueV2 } from "id-unique-protocol";
 
 // Interfaces
@@ -7,7 +8,6 @@ import ISideBarIconComponent from "../../interfaces/ISideBarIconComponent";
 
 // CSS
 import "./style/SideBarIconComponent.scss";
-import { Link } from "react-router-dom";
 
 const SideBarIconComponent = ({
   svgLink,
