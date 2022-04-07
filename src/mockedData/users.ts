@@ -16,7 +16,7 @@ const data = [
         name: "Vibroujuati Kulka",
         imageLink:
           "https://uploads-ssl.webflow.com/58cfe9ec5988108921858f54/5b05858e858010db563c2b45_08---13.10---a-noite-escura-da-alma_v2.jpg",
-        status: "done",
+        status: "ongoing",
       },
       {
         name: "Vibroujuati Kulka",
@@ -28,7 +28,7 @@ const data = [
         name: "Vibroujuati Kulka",
         imageLink:
           "https://uploads-ssl.webflow.com/58cfe9ec5988108921858f54/5b05858e858010db563c2b45_08---13.10---a-noite-escura-da-alma_v2.jpg",
-        status: "done",
+        status: "ongoing",
       },
       {
         name: "Vibroujuati Kulka",

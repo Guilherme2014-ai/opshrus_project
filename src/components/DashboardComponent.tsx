@@ -1,48 +1,60 @@
 // Dependencies
-import React from "react";
-import { idUniqueV2 } from "id-unique-protocol";
+import React, { Dispatch, useState } from "react";
 
-// Interfaces
-import IUserSession from "../interfaces/IUserSession";
-
-// Defaults
-import users from "../mockedData/users";
+// Components
+import { ProjectsComponent } from "./minor/ProjectsComponent";
 
 // CSS
 import "./style/DashboardComponent.scss";
 
+// Others
+type TSubPages = "ongoingProjects" | "completeProjects" | "messages";
+const subPages = {
+  ongoingProjects: <ProjectsComponent done={false} />, // Poderia ter feito uma função com o parametro como boolean
+  completeProjects: <ProjectsComponent done={true} />,
+  messages: <h1>Messages</h1>,
+};
+
 const DashboardComponent = () => {
-  const user = users.getUserByName("Thiago") as unknown as IUserSession;
+  const [subPage, setSubPage] = useState("ongoingProjects") as unknown as [
+    TSubPages,
+    Dispatch<TSubPages>,
+  ];
+
+  function subPageChager(page: TSubPages) {
+    setSubPage(page);
+  }
 
   return (
     <div className="mainDashboard__ContentArea__ProjectsDashboard">
       <h1>Dashboard</h1>
       <ul>
-        <li>Ongoing Projects</li>
-        <li>Complete Projects</li>
-        <li>Messages</li>
+        <li
+          onClick={() => subPageChager("ongoingProjects")}
+          style={{
+            color: subPage == "ongoingProjects" ? "white" : "",
+          }}
+        >
+          Ongoing Projects
+        </li>
+        <li
+          onClick={() => subPageChager("completeProjects")}
+          style={{
+            color: subPage == "completeProjects" ? "white" : "",
+          }}
+        >
+          Complete Projects
+        </li>
+        <li
+          onClick={() => subPageChager("messages")}
+          style={{
+            color: subPage == "messages" ? "white" : "",
+          }}
+        >
+          Messages
+        </li>
       </ul>
-      <div>
-        {user.projects.map((project) => {
-          const { imageLink, name } = project;
-
-          return (
-            <div
-              key={idUniqueV2()}
-              className="mainDashboard__ContentArea__ProjectsDashboard__ProjectImage"
-              style={{
-                backgroundImage: `url(${imageLink})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                width: "300px",
-                height: "200px",
-              }}
-            >
-              <h1>{name}</h1>
-            </div>
-          );
-        })}
-      </div>
+      <div>{subPages[subPage]}</div>
     </div>
   );
 };
