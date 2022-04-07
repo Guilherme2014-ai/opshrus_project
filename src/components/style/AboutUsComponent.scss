@@ -4,21 +4,55 @@
     &__mainArea {
         width: 100vw;
         height: 100vh;
-        background: #715AFF;
+        background-image: url(./img/Background.png);
+        background-position: center;
+        background-size: cover;
 
         &__mainText {
             width: 100vw;
             height: 100vh;
             position: relative;
-            background: red;
             display: flex;
             justify-content: center;
             align-items: center;
 
             &__container {
-                width: 25vh;
+                width: 787px;
                 min-height: 25vw;
-                background: green;
+                position: relative;
+                left: -10%;
+
+                h2 {
+                    font-family: 'Source Sans Pro', sans-serif;
+                    font-size: 55px;
+                    line-height: 60px;
+                    color: white;
+                    text-transform: uppercase;
+                    line-height: 66px;
+                }
+
+                p {
+                    font-size: 20px;
+                    font-family: 'Source Sans Pro', sans-serif;
+                    color: white;
+                    width: 70%;
+                    margin: 1%;
+                    line-height: 29px;
+                }
+
+                &__contact {
+                    width: 80%;
+                    display: flex;
+                    justify-content: space-around;
+                    
+                    p {
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        color: orange;
+                    }
+                    
+                }
+
             }
         }
 
