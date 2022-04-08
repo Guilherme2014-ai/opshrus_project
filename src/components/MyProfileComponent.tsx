@@ -16,6 +16,7 @@ import { ButtonComponent } from "./minor/ButtonComponent";
 import "./style/MyProfileComponent.scss";
 
 const MyProfileComponent = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [userStringfied, setUserStringfied] = getUserSessionState();
   const userSession = getSessionUserProvider(userStringfied);
 

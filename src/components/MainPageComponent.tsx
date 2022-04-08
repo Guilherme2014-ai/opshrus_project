@@ -1,4 +1,5 @@
 // Dependencies
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { Dispatch, useState } from "react";
 
 // Interfaces
