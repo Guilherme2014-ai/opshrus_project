@@ -6,14 +6,14 @@ import "./style/Nav.scss";
 export default function Nav() {
   return (
     <nav>
-      <div className="logo">
+      <div className="nav__logo">
         <h1>Contenta</h1>
       </div>
-      <div className="useful-links">
-        <div className="blog">
+      <div className="nav__usefulLinks">
+        <div className="nav__usefulLinks__blog">
           <h2>Blog</h2>
         </div>
-        <div className="links">
+        <div className="nav__usefulLinks__links">
           <Contact>
             <FiFacebook />
           </Contact>
