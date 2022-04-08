@@ -14,11 +14,25 @@ import { AboutUsComponent } from "./components/AboutUsComponent";
 // CSS
 import "./App.scss";
 import { MainPageComponent } from "./components/MainPageComponent";
-import { AppCtx } from "./contexts/appCtx";
+import { userSessionStateContext } from "./contexts/userSessionStateContext";
 
 function App() {
+  const [userStringfied, setUserStringfied] = useState(null) as unknown as [
+    string,
+    Dispatch<string>,
+  ];
+
+  useEffect(() => {
+    const someUser = users.getUserByName("Thiago");
+    const userStringfied = JSON.stringify(someUser);
+
+    setUserStringfied(userStringfied);
+  });
+
   return (
-    <AppCtx.Provider value={"Something"}>
+    <userSessionStateContext.Provider
+      value={[userStringfied, setUserStringfied]}
+    >
       <div className="main">
         <Router>
           <Routes>
@@ -54,7 +68,7 @@ function App() {
           </Routes>
         </Router>
       </div>
-    </AppCtx.Provider>
+    </userSessionStateContext.Provider>
   );
 }
 

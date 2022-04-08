@@ -3,7 +3,6 @@ import React, { Dispatch, useState } from "react";
 
 // Interfaces
 import IMainPage from "../interfaces/IMainPage";
-import IUserSession from "../interfaces/IUserSession";
 
 // Components
 import { LeftSideBarComponent } from "./LeftSideBarComponent";
@@ -15,7 +14,6 @@ import iconsPath from "../defaults/iconsPath";
 
 // CSS
 import "./style/MainPageComponent.scss";
-import { getContext } from "../contexts/appCtx";
 
 // Others
 const pages = {
@@ -29,10 +27,6 @@ const pages = {
 };
 
 const MainPageComponent = ({ namePage }: IMainPage) => {
-  const content = getContext();
-
-  console.log(content);
-
   return (
     <section className="mainPage">
       <SecondNavComponent />
