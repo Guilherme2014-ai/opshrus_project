@@ -1,9 +1,6 @@
 // Dependencies
 import React from "react";
 
-// Modules
-import getSessionUserProvider from "../modules/getSessionUserProvider";
-
 // Contexts
 //
 
