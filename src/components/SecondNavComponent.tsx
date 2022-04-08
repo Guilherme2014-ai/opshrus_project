@@ -12,6 +12,7 @@ import { Avatar } from "@mui/material";
 
 // CSS
 import "./style/SecondNavComponent.scss";
+
 const SecondNavComponent = () => {
   const [userStringfied, setUserStringfied] = getUserSessionState();
   const userSession = getSessionUserProvider(userStringfied);
