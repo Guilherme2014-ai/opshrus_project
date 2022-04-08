@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Dependencies
 import React from "react";
 import { idUniqueV2 } from "id-unique-protocol";
@@ -11,14 +12,16 @@ import getSessionUserProvider from "../../modules/getSessionUserProvider";
 // CSS
 import "./style/ProjectsComponent.scss";
 
-const ProjectsComponent = ({ done }: { done: boolean }) => {
+const ProjectsComponent = ({ done }: { done: boolean | null }) => {
   const [userStringfied, setUserStringfied] = getUserSessionState();
   const userSession = getSessionUserProvider(userStringfied) || null;
 
   const projects = userSession
-    ? userSession.projects.filter(
-        (project) => project.status == `${done ? "done" : "ongoing"}`,
-      )
+    ? done == null
+      ? userSession.projects
+      : userSession.projects.filter(
+          (project) => project.status == `${done ? "done" : "ongoing"}`,
+        )
     : null;
 
   return (

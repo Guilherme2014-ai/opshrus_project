@@ -11,6 +11,7 @@ import { getUserSessionState } from "../contexts/userSessionStateContext";
 // Components
 import { Avatar } from "@mui/material";
 import { ButtonComponent } from "./minor/ButtonComponent";
+import { ProjectsComponent } from "./minor/ProjectsComponent";
 
 // CSS
 import "./style/MyProfileComponent.scss";
@@ -38,6 +39,9 @@ const MyProfileComponent = () => {
             backgroundColor={colors.selectedIconSideBar}
           />
         </div>
+      </div>
+      <div className="userArea__areaProjects">
+        <ProjectsComponent done={null} />
       </div>
     </div>
   );
