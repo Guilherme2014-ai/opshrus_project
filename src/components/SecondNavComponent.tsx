@@ -1,24 +1,26 @@
 // Dependencies
 import React from "react";
 
+// Modules
+import getSessionUserProvider from "../modules/getSessionUserProvider";
+
+// Contexts
+//
+
 // Components
 import { Avatar } from "@mui/material";
-
-// Defaults
-import users from "../mockedData/users";
 
 // CSS
 import "./style/SecondNavComponent.scss";
 
 const SecondNavComponent = () => {
-  const user = users.getUserByName("Thiago");
-
+  const userSession = { name: "asdasd", profile_picture: "asdasd" };
   return (
     <nav className="mainNav">
       <h2>Contenta</h2>
       <div>
-        <small>{user?.name.toLocaleUpperCase()}</small>{" "}
-        <Avatar alt="Remy Sharp" src={user?.profile_picture} />
+        <small>{userSession.name.toLocaleUpperCase()}</small>{" "}
+        <Avatar alt="Remy Sharp" src={userSession.profile_picture} />
       </div>
     </nav>
   );

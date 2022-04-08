@@ -1,8 +1,12 @@
 // Dependencies
-import React from "react";
+import React, { Dispatch, useState } from "react";
 
 // Interfaces
 import IMainPage from "../interfaces/IMainPage";
+import IUserSession from "../interfaces/IUserSession";
+
+// Contexts
+import { getUserSession } from "../contexts/UserSessionContext";
 
 // Components
 import { LeftSideBarComponent } from "./LeftSideBarComponent";
