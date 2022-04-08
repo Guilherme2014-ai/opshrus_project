@@ -1,13 +1,15 @@
 // Dependencies
-import React from "react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React, { Dispatch, useState } from "react";
 
 // Interfaces
 import IMainPage from "../interfaces/IMainPage";
 
 // Components
+import { DashboardComponent } from "./DashboardComponent";
+import { MyProfileComponent } from "./MyProfileComponent";
 import { LeftSideBarComponent } from "./LeftSideBarComponent";
 import { SecondNavComponent } from "./SecondNavComponent";
-import { DashboardComponent } from "./DashboardComponent";
 
 // Defaults
 import iconsPath from "../defaults/iconsPath";
@@ -20,7 +22,7 @@ const pages = {
   home: <DashboardComponent />,
   search: <h1>Search</h1>,
   featured: <h1>Featured</h1>,
-  profile: <h1>Profile</h1>,
+  profile: <MyProfileComponent />,
   projects: <h1>Projects</h1>,
   clients: <h1>Clients</h1>,
   browse: <h1>Browse</h1>,

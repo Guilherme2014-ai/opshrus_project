@@ -1,0 +1,13 @@
+#button {
+    transition: all ease 0.4s;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 80%;
+
+    &:hover {
+        opacity: 100%;
+        transform: scale(1.04);
+    }
+}

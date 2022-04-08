@@ -1,0 +1,40 @@
+@import "../utils_styles/variables";
+
+.userArea {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    height: 200px;
+    width: 100%;
+
+    color: white;
+
+    margin-top: 100px;
+
+    .userArea__profilePictureArea {
+        transition: all ease 0.4s;
+        border: $selectedIconSideBar solid 2px;
+        padding: 10px;
+        border-radius: 50%;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        .userArea__profilePictureArea__profilePicuture {
+            width: 150px;
+            height: 150px;
+        }
+    }    
+
+    .userArea__textContent {
+        margin-left: 50px;
+        font-family: "Roboto", sans-serif;
+
+        h1 {
+            font-size: 2.5pc;
+            margin-bottom: 20px;
+        }
+    }
+}

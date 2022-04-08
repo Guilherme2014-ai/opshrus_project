@@ -1,25 +1,33 @@
 // Dependencies
 import React from "react";
 
+// modules
+import getSessionUserProvider from "../modules/getSessionUserProvider";
+
+// Contexts
+import { getUserSessionState } from "../contexts/userSessionStateContext";
+
 // Components
 import { Avatar } from "@mui/material";
-
-// Defaults
-import users from "../mockedData/users";
 
 // CSS
 import "./style/SecondNavComponent.scss";
 
 const SecondNavComponent = () => {
-  const user = users.getUserByName("Thiago");
+  const [userStringfied, setUserStringfied] = getUserSessionState();
+  const userSession = getSessionUserProvider(userStringfied);
 
   return (
     <nav className="mainNav">
-      <h2>Contenta</h2>
-      <div>
-        <small>{user?.name.toLocaleUpperCase()}</small>{" "}
-        <Avatar alt="Remy Sharp" src={user?.profile_picture} />
-      </div>
+      {userSession && (
+        <>
+          <h2>Contenta</h2>
+          <div>
+            <small>{userSession.name.toLocaleUpperCase()}</small>{" "}
+            <Avatar alt="Remy Sharp" src={userSession.profile_picture} />
+          </div>
+        </>
+      )}
     </nav>
   );
 };
