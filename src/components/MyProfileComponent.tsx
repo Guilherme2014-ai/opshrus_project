@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Dependencies
-import React from "react";
+import React, { useState, Dispatch } from "react";
 
 // Contexts
 import getSessionUserProvider from "../modules/getSessionUserProvider";
@@ -16,10 +17,25 @@ import { ProjectsComponent } from "./minor/ProjectsComponent";
 // CSS
 import "./style/MyProfileComponent.scss";
 
+// Others
+type TSubPages = "myProjects" | "myClients";
+const subPages = {
+  myProjects: <ProjectsComponent done={null} />,
+  myClients: <h1>My Clients</h1>,
+};
+
 const MyProfileComponent = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [userStringfied, setUserStringfied] = getUserSessionState();
+  const [subPage, setSubPage] = useState("myProjects") as unknown as [
+    TSubPages,
+    Dispatch<TSubPages>,
+  ];
+
   const userSession = getSessionUserProvider(userStringfied);
+
+  function subPageChager(page: TSubPages) {
+    setSubPage(page);
+  }
 
   return (
     <div>
@@ -40,7 +56,27 @@ const MyProfileComponent = () => {
           />
         </div>
       </div>
-      <ProjectsComponent done={null} />
+
+      <ul className="userArea__ProjectUl">
+        <li
+          onClick={() => subPageChager("myProjects")}
+          style={{
+            color: subPage == "myProjects" ? "white" : "",
+          }}
+        >
+          My Projects
+        </li>
+        <li
+          onClick={() => subPageChager("myClients")}
+          style={{
+            color: subPage == "myClients" ? "white" : "",
+          }}
+        >
+          My Clients
+        </li>
+      </ul>
+
+      {subPages[subPage]}
     </div>
   );
 };

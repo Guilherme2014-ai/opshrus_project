@@ -13,11 +13,11 @@
     padding: 20px;
 
     .projectsArea__projectImage {
-        cursor: pointer;
-        transition: all ease 0.3s;
-    
         display: flex;
         align-items: center;
+
+        cursor: pointer;
+        transition: all ease 0.3s;
 
         margin: 6px;
         border-radius: 8px;
@@ -26,8 +26,9 @@
     
         h1 {
             font-family: 'Raleway', sans-serif;
-            color: rgb(255, 255, 255);
+            color: white;
             text-shadow: black 2px 5px;
+            font-size: 3pc;
         }
     
         &:hover {

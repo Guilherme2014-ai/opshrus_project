@@ -1,4 +1,5 @@
 @import "../utils_styles/variables";
+@import "../utils_styles/mixins";
 
 .userArea {
     display: flex;
@@ -10,7 +11,7 @@
 
     color: white;
 
-    margin-top: 100px;
+    margin-top: 50px;
 
     .userArea__profilePictureArea {
         transition: all ease 0.4s;
@@ -36,5 +37,21 @@
             font-size: 2.5pc;
             margin-bottom: 20px;
         }
+    }
+}
+
+.userArea__ProjectUl {
+    @include projectLi;
+    display: flex;
+
+    
+    width: 90%;
+    margin-top: 45px;
+    
+    color: $thirdColor;
+    cursor: pointer;
+    
+    li {
+        margin-right: 30px;
     }
 }
