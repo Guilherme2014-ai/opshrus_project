@@ -54,7 +54,7 @@ const DashboardComponent = () => {
           Messages
         </li>
       </ul>
-      <div>{subPages[subPage]}</div>
+      {subPages[subPage]}
     </div>
   );
 };

@@ -25,7 +25,7 @@ const ProjectsComponent = ({ done }: { done: boolean | null }) => {
     : null;
 
   return (
-    <>
+    <div className="projectsArea">
       {projects &&
         projects.map((project) => {
           const { imageLink, name } = project;
@@ -33,7 +33,7 @@ const ProjectsComponent = ({ done }: { done: boolean | null }) => {
           return (
             <div
               key={idUniqueV2()}
-              className="mainDashboard__ContentArea__ProjectsDashboard__ProjectImage"
+              className="projectsArea__projectImage"
               style={{
                 backgroundImage: `url(${imageLink})`,
                 backgroundSize: "cover",
@@ -46,7 +46,7 @@ const ProjectsComponent = ({ done }: { done: boolean | null }) => {
             </div>
           );
         })}
-    </>
+    </div>
   );
 };
 

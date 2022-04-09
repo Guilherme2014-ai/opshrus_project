@@ -1,20 +1,37 @@
-.mainDashboard__ContentArea__ProjectsDashboard__ProjectImage {
-    cursor: pointer;
-    transition: all ease 0.3s;
+@import "../../utils_styles/variables";
 
-    margin-right: 12px;
+.projectsArea {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
-    text-align: center;
+    width: 90%;
+    margin-top: 23px;
+    background-color: $secondColor;
+    border-radius: 10px;
 
-    h1 {
-        display: flex;
-        align-items: center;
-        font-family: 'Raleway', sans-serif;
-        color: rgb(255, 255, 255);
-        text-shadow: black 2px 5px;
-    }
+    padding: 20px;
 
-    &:hover {
-        transform: scale(1.05);
+    .projectsArea__projectImage {
+        cursor: pointer;
+        transition: all ease 0.3s;
+    
+        margin: 6px;
+        border-radius: 8px;
+    
+        text-align: center;
+    
+        h1 {
+            display: flex;
+            align-items: center;
+            font-family: 'Raleway', sans-serif;
+            color: rgb(255, 255, 255);
+            text-shadow: black 2px 5px;
+        }
+    
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }
+

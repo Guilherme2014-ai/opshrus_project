@@ -40,9 +40,7 @@ const MyProfileComponent = () => {
           />
         </div>
       </div>
-      <div className="userArea__areaProjects">
-        <ProjectsComponent done={null} />
-      </div>
+      <ProjectsComponent done={null} />
     </div>
   );
 };
