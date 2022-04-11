@@ -5,6 +5,15 @@
     // background-size: cover;
     // background-attachment: fixed;
 
+    h2 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 75px;
+        line-height: 60px;
+        color: white;
+        text-transform: uppercase;
+        line-height: 66px;
+    }
+
     &__mainArea {
         position: relative;
         width: 100%;
@@ -23,15 +32,6 @@
                 min-height: 25vw;
                 position: relative;
                 left: -10%;
-
-                h2 {
-                    font-family: 'Source Sans Pro', sans-serif;
-                    font-size: 55px;
-                    line-height: 60px;
-                    color: white;
-                    text-transform: uppercase;
-                    line-height: 66px;
-                }
 
                 p {
                     font-size: 20px;
@@ -71,14 +71,7 @@
             display: flex;
 
             h2 {
-                font-family: 'Source Sans Pro', sans-serif;
-                font-style: normal;
-                font-weight: 700;
-                font-size: 70px;
-                
                 display: flex;
-                text-transform: uppercase;
-
                 width: 30%;
                 color: white;
                 margin-top: 5%;
@@ -109,5 +102,71 @@
             }
 
         }
+    }
+
+    &__whyUs {
+        width: 100%;
+        min-height: 1vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+
+        #jobondemand {
+            margin-left: 10%;
+        }
+
+        #talentsondemand {
+            margin-left: 25%;
+        }
+
+        #turnaround {
+            margin-left: 10%;
+        }
+
+        #careeroportunities {
+            margin-left: 25%;
+        }
+
+        p {
+            margin-top: 5%;
+            margin-bottom: 5%;
+            width: 754px;
+            text-align: justify;
+            font-family: Source Sans Pro;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 25px;
+            text-align: center;
+
+        }
+
+        &__wrapper {
+            width: 100%;
+            min-height: 1vh;
+            position: relative;
+
+
+            &__container {
+                min-height: 1vh;
+                width: 70%; 
+                padding: 3% 2% 1% 5% !important;
+                margin: 5%;
+                z-index: 200;
+
+                h3 {
+                    font-size: 25px !important;
+                }
+
+                p {
+                    width: 100%;
+                    text-align: left;
+                }
+            }            
+        }
+
+
     }
 }
