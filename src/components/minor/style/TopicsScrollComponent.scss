@@ -80,7 +80,8 @@
 
                 border-radius: 20px;
 
-                background-color: blue;
+                background: rgb(101,108,126);
+                background: radial-gradient(circle, rgb(87, 92, 104) 0%, rgb(67, 72, 87) 100%,rgba(101,108,126,1) 50%);
 
                 text-align: center;
                 padding-top: 20px;

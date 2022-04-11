@@ -2,7 +2,8 @@
 import React from "react";
 
 // Defaults
-import iconsPath from "../defaults/iconsPath";
+import iconsPath from "../../defaults/iconsPath";
+import { topics } from "../../mockedData/topics";
 
 // CSS
 import "./style/TopicsScrollComponent.scss";
@@ -24,34 +25,18 @@ const TopicsScrollComponent = () => {
       </div>
       <div className="topicsScrollArea__scrollArea">
         <ul className="topicsScrollArea__scrollArea__topics">
-          <li className="topicsScrollArea__scrollArea__topics__topic">Web</li>
-          <li className="topicsScrollArea__scrollArea__topics__topic">
-            Animations
-          </li>
-          <li className="topicsScrollArea__scrollArea__topics__topic">
-            Image Art
-          </li>
-          <li className="topicsScrollArea__scrollArea__topics__topic">
-            Image Art
-          </li>
-          <li className="topicsScrollArea__scrollArea__topics__topic">
-            Image Art
-          </li>
-          <li className="topicsScrollArea__scrollArea__topics__topic">
-            Image Art
-          </li>
-          <li className="topicsScrollArea__scrollArea__topics__topic">
-            Image Art
-          </li>
-          <li className="topicsScrollArea__scrollArea__topics__topic">
-            Image Art
-          </li>
-          <li className="topicsScrollArea__scrollArea__topics__topic">
-            Image Art
-          </li>
-          <li className="topicsScrollArea__scrollArea__topics__topic">
-            Image Art
-          </li>
+          {topics.map((topic) => {
+            console.log(topic.id, topic.name);
+
+            return (
+              <li
+                className="topicsScrollArea__scrollArea__topics__topic"
+                key={topic.id}
+              >
+                {topic.name}
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div className="topicsScrollArea__positionActionRight">

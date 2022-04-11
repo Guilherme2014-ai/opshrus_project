@@ -10,7 +10,8 @@ import { DashboardComponent } from "./DashboardComponent";
 import { MyProfileComponent } from "./MyProfileComponent";
 import { LeftSideBarComponent } from "./LeftSideBarComponent";
 import { SecondNavComponent } from "./SecondNavComponent";
-import { TopicsScrollComponent } from "./TopicsScrollComponent";
+import { TopicsScrollComponent } from "./minor/TopicsScrollComponent";
+import { SearchComponent } from "./SearchComponent";
 
 // Defaults
 import iconsPath from "../defaults/iconsPath";
@@ -21,7 +22,7 @@ import "./style/MainPageComponent.scss";
 // Others
 const pages = {
   home: <DashboardComponent />,
-  search: <TopicsScrollComponent />,
+  search: <SearchComponent />,
   featured: <h1>Featured</h1>,
   profile: <MyProfileComponent />,
   projects: <h1>Projects</h1>,
