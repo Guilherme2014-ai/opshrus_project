@@ -239,6 +239,23 @@ const AboutUsComponent = () => {
         </div>
       </div>
       <div className="aboutUs__whyUs__circleContainer"></div>
+      <div className="aboutUs__ourWork">
+        <h2>Our Work</h2>
+        <div className="aboutUs__ourWork__container">
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+          <div className="aboutUs__ourWork__container__project"></div>
+        </div>
+      </div>
     </section>
   );
 };

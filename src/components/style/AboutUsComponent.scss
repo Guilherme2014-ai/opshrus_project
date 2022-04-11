@@ -64,6 +64,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 15%;
 
         &__container {
             width: 70%;
@@ -113,6 +114,7 @@
         align-items: center;
         flex-direction: column;
         color: white;
+        margin-top: 15%;
 
         #jobondemand {
             margin-left: 10%;
@@ -168,5 +170,42 @@
         }
 
 
+    }
+
+    &__ourWork {
+        position: relative;
+        width: 100%;
+        min-height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 15%;
+
+        h2 {
+            position: relative;
+        }
+
+        &__container {
+            width: 60vw;
+            min-height: 15vh;
+            margin: 10%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            
+
+            &__project {
+                min-height: 170px;
+                min-width: 300px;
+                border-radius: 10px;
+                background: black;
+                
+                &:not(:first-child) {
+                    margin-left: 5%;
+                }
+            }
+        }
     }
 }
