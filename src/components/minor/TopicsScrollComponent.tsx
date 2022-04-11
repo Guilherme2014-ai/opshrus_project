@@ -1,5 +1,5 @@
 // Dependencies
-import React from "react";
+import React, { useState } from "react";
 
 // Defaults
 import iconsPath from "../../defaults/iconsPath";
@@ -10,37 +10,53 @@ import "./style/TopicsScrollComponent.scss";
 
 // Others
 type TSides = "left" | "right";
+let counter = 0;
 
 const TopicsScrollComponent = () => {
-  let counter = 0;
+  const jump = 380;
+
+  const topicPerClick = 2;
+  const limit = topics.length / topicPerClick;
+
+  const [clickCounter, setClickCounter] = useState(1);
 
   function scrollMovimentationHandler(side: TSides) {
     const scrollElement = document.getElementById(
       "topicsScrollArea__scrollArea",
     ) as HTMLElement;
 
-    side === "right" ? (counter -= 370) : (counter += 370);
+    if (side === "right") {
+      counter -= jump;
+      setClickCounter(clickCounter + 1);
+    } else {
+      counter += jump;
+      setClickCounter(clickCounter - 1);
+    }
+
+    console.log(counter, clickCounter);
 
     scrollElement.style.transform = `translateX(${counter}px)`;
   }
 
   return (
     <div className="topicsScrollArea">
-      <div
-        className="topicsScrollArea__positionActionLeft"
-        onClick={() => scrollMovimentationHandler("left")}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          className="topicsScrollArea__positionAction__icon"
-          viewBox="0 0 16 16"
+      {counter < 0 && (
+        <div
+          className="topicsScrollArea__positionActionLeft"
+          onClick={() => scrollMovimentationHandler("left")}
         >
-          <path d={iconsPath.arrowLeft} />
-        </svg>
-      </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="topicsScrollArea__positionAction__icon"
+            viewBox="0 0 16 16"
+          >
+            <path d={iconsPath.arrowLeft} />
+          </svg>
+        </div>
+      )}
       <div
         className="topicsScrollArea__scrollArea"
         id="topicsScrollArea__scrollArea"
@@ -56,21 +72,25 @@ const TopicsScrollComponent = () => {
           ))}
         </ul>
       </div>
-      <div
-        className="topicsScrollArea__positionActionRight"
-        onClick={() => scrollMovimentationHandler("right")}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          className="topicsScrollArea__positionAction__icon"
-          viewBox="0 0 16 16"
+      {clickCounter < limit ? (
+        <div
+          className="topicsScrollArea__positionActionRight"
+          onClick={() => scrollMovimentationHandler("right")}
         >
-          <path d={iconsPath.arrowRight} />
-        </svg>
-      </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="topicsScrollArea__positionAction__icon"
+            viewBox="0 0 16 16"
+          >
+            <path d={iconsPath.arrowRight} />
+          </svg>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };
