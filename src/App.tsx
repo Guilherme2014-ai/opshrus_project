@@ -37,6 +37,8 @@ function App() {
         <Router>
           <Routes>
             <Route path="/about_us" element={<AboutUsComponent />}></Route>
+            <Route path="/" element={<AboutUsComponent />}></Route>
+            <Route path="" element={<AboutUsComponent />}></Route>
             <Route
               path="/home"
               element={<MainPageComponent namePage="home" />}

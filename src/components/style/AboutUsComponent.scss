@@ -94,10 +94,17 @@
 
                 &__content {
                     width: 90%;
-                    height: 90%;
-                    background: linear-gradient(55.33deg, rgba(229, 229, 229, 0.5) -6.38%, rgba(244, 244, 244, 0) 101.73%);
-                    backdrop-filter: blur(20px);
-                    border-radius: 30px;
+                    min-height: 1vh;
+                    margin-bottom: 10%;
+
+                    &__container {
+                        width: 100%;
+                        min-height: 1vh;
+
+                        &:not(:first-child) {
+                            margin-top: 5%;
+                        }
+                    }
                 }
             }
 
