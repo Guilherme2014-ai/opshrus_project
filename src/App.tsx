@@ -1,12 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Dependencies
-import React, { Dispatch, useContext, useEffect, useState } from "react";
+import React, { Dispatch, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Defaults
 import users from "./mockedData/users";
-
-// Contexts
 
 // Components
 import { AboutUsComponent } from "./components/AboutUsComponent";
@@ -36,9 +34,7 @@ function App() {
       <div className="main">
         <Router>
           <Routes>
-            <Route path="/about_us" element={<AboutUsComponent />}></Route>
             <Route path="/" element={<AboutUsComponent />}></Route>
-            <Route path="" element={<AboutUsComponent />}></Route>
             <Route
               path="/home"
               element={<MainPageComponent namePage="home" />}
