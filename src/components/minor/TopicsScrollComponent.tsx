@@ -8,10 +8,28 @@ import { topics } from "../../mockedData/topics";
 // CSS
 import "./style/TopicsScrollComponent.scss";
 
+// Others
+type TSides = "left" | "right";
+
 const TopicsScrollComponent = () => {
+  let counter = 0;
+
+  function scrollMovimentationHandler(side: TSides) {
+    const scrollElement = document.getElementById(
+      "topicsScrollArea__scrollArea",
+    ) as HTMLElement;
+
+    side === "right" ? (counter -= 370) : (counter += 370);
+
+    scrollElement.style.transform = `translateX(${counter}px)`;
+  }
+
   return (
     <div className="topicsScrollArea">
-      <div className="topicsScrollArea__positionActionLeft">
+      <div
+        className="topicsScrollArea__positionActionLeft"
+        onClick={() => scrollMovimentationHandler("left")}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -23,23 +41,25 @@ const TopicsScrollComponent = () => {
           <path d={iconsPath.arrowLeft} />
         </svg>
       </div>
-      <div className="topicsScrollArea__scrollArea">
+      <div
+        className="topicsScrollArea__scrollArea"
+        id="topicsScrollArea__scrollArea"
+      >
         <ul className="topicsScrollArea__scrollArea__topics">
-          {topics.map((topic) => {
-            console.log(topic.id, topic.name);
-
-            return (
-              <li
-                className="topicsScrollArea__scrollArea__topics__topic"
-                key={topic.id}
-              >
-                {topic.name}
-              </li>
-            );
-          })}
+          {topics.map((topic) => (
+            <li
+              className="topicsScrollArea__scrollArea__topics__topic"
+              key={topic.id}
+            >
+              {topic.name}
+            </li>
+          ))}
         </ul>
       </div>
-      <div className="topicsScrollArea__positionActionRight">
+      <div
+        className="topicsScrollArea__positionActionRight"
+        onClick={() => scrollMovimentationHandler("right")}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

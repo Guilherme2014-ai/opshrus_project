@@ -10,8 +10,7 @@ import { DashboardComponent } from "./DashboardComponent";
 import { MyProfileComponent } from "./MyProfileComponent";
 import { LeftSideBarComponent } from "./LeftSideBarComponent";
 import { SecondNavComponent } from "./SecondNavComponent";
-import { TopicsScrollComponent } from "./minor/TopicsScrollComponent";
-import { SearchComponent } from "./SearchComponent";
+import { BrowserPage } from "./BrowserPage";
 
 // Defaults
 import iconsPath from "../defaults/iconsPath";
@@ -22,12 +21,12 @@ import "./style/MainPageComponent.scss";
 // Others
 const pages = {
   home: <DashboardComponent />,
-  search: <SearchComponent />,
+  search: <h1>Search</h1>,
   featured: <h1>Featured</h1>,
   profile: <MyProfileComponent />,
   projects: <h1>Projects</h1>,
   clients: <h1>Clients</h1>,
-  browse: <h1>Browse</h1>,
+  browse: <BrowserPage />,
 };
 
 const MainPageComponent = ({ namePage }: IMainPage) => {

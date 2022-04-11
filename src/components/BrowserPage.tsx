@@ -6,9 +6,9 @@ import { ProjectsComponent } from "./minor/ProjectsComponent";
 import { TopicsScrollComponent } from "./minor/TopicsScrollComponent";
 
 // CSS
-import "./style/SearchComponent.scss";
+import "./style/BrowserPage.scss";
 
-const SearchComponent = () => {
+const BrowserPage = () => {
   return (
     <div className="mainSearch">
       <h1 className="mainSearch__discoverTitle">Discover</h1>
@@ -21,7 +21,7 @@ const SearchComponent = () => {
   );
 };
 
-export { SearchComponent };
+export { BrowserPage };
 
 /*
 OCS: ProjectsComponent estão somente configurados para projetos do user logado
