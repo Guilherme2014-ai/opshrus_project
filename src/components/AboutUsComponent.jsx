@@ -323,6 +323,7 @@ const AboutUsComponent = () => {
             </div>
             <p>Kažkas</p>
           </div>
+          <p>Explore</p>
         </div>
       </div>
     </section>

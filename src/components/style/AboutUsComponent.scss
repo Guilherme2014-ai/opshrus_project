@@ -223,6 +223,20 @@
         justify-content: center;
         align-items: center;
 
+        p {
+            font-family: 'Source Sans Pro';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 35px;
+            align-items: center;
+            text-align: center;
+            text-transform: uppercase;
+            color: orange;
+            margin: 0;
+            margin-right: 17%;
+        }
+
         &__sections {
             width: 80%;
             min-height: 15vh;
