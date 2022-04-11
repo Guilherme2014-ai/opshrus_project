@@ -1,6 +1,6 @@
 .aboutUs {
     margin: 0;
-    background: #712AFF;
+    background: #5646B8;
     // background-image: url(./img/Background.png);
     // background-size: cover;
     // background-attachment: fixed;
@@ -205,6 +205,69 @@
                 &:not(:first-child) {
                     margin-left: 5%;
                 }
+            }
+        }
+    }
+
+    &__workWithUs {
+        width: 100%;
+        min-height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 15%;
+        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__sections {
+            width: 80%;
+            min-height: 15vh;
+            margin: 10%;
+            margin-top: 5%;
+            position: relative;
+            display: inline-block;
+            left: 7%;
+
+
+            &__section {
+                min-width: 1vw;
+                min-height: 1vh;
+                display: inline-block;
+                text-align: center;
+                margin: 2%;
+                margin-top: 6%;
+                
+                p {
+                    font-family: 'Source Sans Pro';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 25px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    margin: 5%;
+                    color: white;
+                }
+
+                &__wrapper {
+                    min-width: 200px;
+                    height: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    svg {
+                        width: 70%;
+                        height: 70%;
+                        opacity: 0.5;
+                    }
+                }  
             }
         }
     }
