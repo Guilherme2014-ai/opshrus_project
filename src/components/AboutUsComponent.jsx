@@ -4,6 +4,15 @@ import React from "react";
 // Components
 import Nav from "./Nav";
 import Circle from "./minor/Circle";
+import { TiVideo, TiWorld } from "react-icons/ti";
+import { BiMoviePlay } from "react-icons/bi";
+import { HiPhotograph } from "react-icons/hi";
+import {
+  BsPencil,
+  BsEmojiSunglassesFill,
+  BsHourglassSplit,
+} from "react-icons/bs";
+import { FaMeteor } from "react-icons/fa";
 
 // CSS
 import "./style/AboutUsComponent.scss";
@@ -254,6 +263,67 @@ const AboutUsComponent = () => {
           <div className="aboutUs__ourWork__container__project"></div>
           <div className="aboutUs__ourWork__container__project"></div>
           <div className="aboutUs__ourWork__container__project"></div>
+        </div>
+      </div>
+      <div className="aboutUs__workWithUs">
+        <h2>Work With Us</h2>
+        <div className="aboutUs__workWithUs__sections">
+          <div className="aboutUs__workWithUs__sections__section">
+            <div className="aboutUs__workWithUs__sections__section__wrapper opaque">
+              <FaMeteor />
+            </div>
+            <p>Branding</p>
+          </div>
+
+          <div className="aboutUs__workWithUs__sections__section">
+            <div className="aboutUs__workWithUs__sections__section__wrapper opaque">
+              <TiVideo />
+            </div>
+            <p>Animation</p>
+          </div>
+
+          <div className="aboutUs__workWithUs__sections__section">
+            <div className="aboutUs__workWithUs__sections__section__wrapper opaque">
+              <BsPencil />
+            </div>
+            <p>Web / UI Design</p>
+          </div>
+
+          <div className="aboutUs__workWithUs__sections__section">
+            <div className="aboutUs__workWithUs__sections__section__wrapper opaque">
+              <HiPhotograph />
+            </div>
+            <p>Photography</p>
+          </div>
+
+          <div className="aboutUs__workWithUs__sections__section">
+            <div className="aboutUs__workWithUs__sections__section__wrapper opaque">
+              <BiMoviePlay />
+            </div>
+            <p>Video</p>
+          </div>
+
+          <div className="aboutUs__workWithUs__sections__section">
+            <div className="aboutUs__workWithUs__sections__section__wrapper opaque">
+              <TiWorld />
+            </div>
+            <p>3D</p>
+          </div>
+
+          <div className="aboutUs__workWithUs__sections__section">
+            <div className="aboutUs__workWithUs__sections__section__wrapper opaque">
+              <BsEmojiSunglassesFill />
+            </div>
+            <p>Social Media</p>
+          </div>
+
+          <div className="aboutUs__workWithUs__sections__section">
+            <div className="aboutUs__workWithUs__sections__section__wrapper opaque">
+              <BsHourglassSplit />
+            </div>
+            <p>Kažkas</p>
+          </div>
+          <p>Explore</p>
         </div>
       </div>
     </section>
