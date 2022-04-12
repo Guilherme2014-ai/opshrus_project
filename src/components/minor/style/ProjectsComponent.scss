@@ -14,7 +14,14 @@
 
     .projectsArea__projectImage {
         display: flex;
+        justify-content: center;
         align-items: center;
+        
+        word-wrap: break-word;
+        flex-wrap: wrap;
+
+        width: 300px;
+        height: 200px;
 
         cursor: pointer;
         transition: all ease 0.3s;
@@ -25,6 +32,7 @@
         text-align: center;
     
         h1 {
+            transition: all ease 1s;
             font-family: 'Raleway', sans-serif;
             color: white;
             text-shadow: black 2px 5px;
@@ -37,3 +45,32 @@
     }
 }
 
+@media (max-width: 1322px) {
+    .projectsArea__projectImage {
+        width: 219px !important;
+
+        h1 {
+            font-size: 40px !important;
+        }
+    }
+}
+
+@media (max-width: 979px) {
+    .projectsArea__projectImage {
+        width: 196px !important;
+
+        h1 {
+            font-size: 40px !important;
+        }
+    }
+}
+
+@media (max-width: 745px) {
+    .projectsArea__projectImage {
+        width: 100% !important;
+
+        h1 {
+            font-size: 30px !important;
+        }
+    }
+}

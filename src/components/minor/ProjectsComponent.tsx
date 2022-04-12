@@ -38,8 +38,6 @@ const ProjectsComponent = ({ done }: { done: boolean | null }) => {
                 backgroundImage: `url(${imageLink})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                width: "300px",
-                height: "200px",
               }}
             >
               <h1>{name}</h1>
