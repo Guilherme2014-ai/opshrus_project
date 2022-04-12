@@ -1,3 +1,4 @@
+import React from "react";
 import "./style/Circle.scss";
 
 export default function Circle(props) {

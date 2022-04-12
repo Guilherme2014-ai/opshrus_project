@@ -1,3 +1,4 @@
+import React from "react";
 import "./style/Contact.scss";
 
 export default function Contact(props: any) {

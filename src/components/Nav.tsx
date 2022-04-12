@@ -1,3 +1,4 @@
+import React from "react";
 import Contact from "./minor/Contact";
 import { FiFacebook, FiMail, FiLinkedin, FiInstagram } from "react-icons/fi";
 
