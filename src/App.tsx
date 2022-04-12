@@ -13,6 +13,7 @@ import { AboutUsComponent } from "./components/AboutUsComponent";
 import "./App.scss";
 import { MainPageComponent } from "./components/MainPageComponent";
 import { userSessionStateContext } from "./contexts/userSessionStateContext";
+import { CreateMeetingComponent } from "./components/CreateMeetingComponent";
 
 function App() {
   const [userStringfied, setUserStringfied] = useState(null) as unknown as [
@@ -35,6 +36,10 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<AboutUsComponent />}></Route>
+            <Route
+              path="/meeting/create"
+              element={<CreateMeetingComponent />}
+            ></Route>
             <Route
               path="/home"
               element={<MainPageComponent namePage="home" />}

@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(36, 193, 255);
+}
+
+.calendar {
+    .monthsWrapper {
+        width: 200px;
+
+        .monthsWrapper__leftArrow {
+            position: absolute;
+
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .monthsWrapper__rightArrow {
+            position: absolute;
+
+            top: 0;
+            right: 0;
+            left: 170px;
+        }
+
+        .monthsWrapper__months {
+            position: relative;
+            display: flex;
+            width: 100%;
+            overflow: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+
+            &::-webkit-scrollbar {
+                background: transparent;
+            }
+
+            .monthsWrapper__months__month {
+                scroll-snap-align: start;
+
+                flex: none;
+
+                width: 100%;
+
+                display: flex;
+                justify-content: center;
+
+                .monthsWrapper__months__monthTitle {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
