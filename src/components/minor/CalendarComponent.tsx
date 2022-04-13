@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { idUniqueV2 } from "id-unique-protocol";
 
 // Defaults
@@ -10,12 +10,15 @@ import ICalendarData from "../../interfaces/ICalendarData";
 
 // CSS
 import "./style/CalendarComponent.scss";
+import month_position from "../../defaults/month_position";
 
 const CalendarComponent = ({
   calendarData,
 }: {
   calendarData: ICalendarData;
 }) => {
+  const [currentMonth, setCurrentMonth] = useState("january");
+
   useEffect(() => {
     const monthsWrapper__monthsElement = document.getElementById(
       "monthsWrapper__months",
@@ -50,13 +53,17 @@ const CalendarComponent = ({
     return baseArr;
   };
 
+  const monthPosition =
+    month_position[`${currentMonth}` as "january"] || "january";
+  console.log(monthPosition, currentMonth);
+
   return (
     <div className="calendar">
       <div className="monthsArea">
         <div className="monthsWrapper">
           <div className="monthsWrapper__months" id="monthsWrapper__months">
             {calendarData.months.map((month) => (
-              <div className="monthsWrapper__months__month">
+              <div className="monthsWrapper__months__month" key={idUniqueV2()}>
                 <h1 className="monthsWrapper__months__monthTitle">
                   {month.name}
                 </h1>
@@ -67,8 +74,10 @@ const CalendarComponent = ({
       </div>
 
       <div className="calendar__days">
-        {simulatedFor(calendarData.months[1].daysQuantity).map((day) => (
-          <div className="calendar__days__day">{day}</div>
+        {simulatedFor(calendarData.months[0].daysQuantity).map((day) => (
+          <div className="calendar__days__day" key={idUniqueV2()}>
+            {day}
+          </div>
         ))}
       </div>
     </div>
