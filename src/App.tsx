@@ -14,6 +14,7 @@ import "./App.scss";
 import { MainPageComponent } from "./components/MainPageComponent";
 import { userSessionStateContext } from "./contexts/userSessionStateContext";
 import { CreateMeetingComponent } from "./components/CreateMeetingComponent";
+import SignUpComponent from "./components/SignUpComponent";
 
 function App() {
   const [userStringfied, setUserStringfied] = useState(null) as unknown as [
@@ -36,6 +37,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<AboutUsComponent />}></Route>
+            <Route path="/signup" element={<SignUpComponent />}></Route>
             <Route
               path="/meeting/create"
               element={<CreateMeetingComponent />}
