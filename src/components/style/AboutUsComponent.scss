@@ -7,17 +7,39 @@
 
     h2 {
         font-family: 'Source Sans Pro', sans-serif;
-        font-size: 75px;
+        font-size: 5vw;
         line-height: 60px;
         color: white;
         text-transform: uppercase;
-        line-height: 66px;
+        font-weight: 550;
+        line-height: 13vh;
+
+        @media only screen and (max-width: 500px) {
+            font-size: 10vw;
+        }
     }
 
     &__mainArea {
         position: relative;
         width: 100%;
         min-height: 100vh;
+
+        h2 {
+            font-size: 60px;
+
+            @media only screen and (max-width: 730px) {
+                font-size: 50px;
+            }
+
+            @media only screen and (max-width: 620px) {
+                font-size: 40px;
+            }
+
+            @media only screen and (max-width: 480px) {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
 
         &__mainText {
             width: 100vw;
@@ -32,6 +54,11 @@
                 min-height: 25vw;
                 position: relative;
                 left: -10%;
+
+                @media only screen and (max-width: 1140px) {
+                    width: 80%;
+                    left: -5%;
+                }
 
                 p {
                     font-size: 20px;
@@ -65,31 +92,63 @@
         justify-content: center;
         align-items: center;
         margin-top: 15%;
+        overflow-y: hidden;
+
+        @media only screen and (max-width: 1140px) {
+            flex-direction: column;
+        }
 
         &__container {
             width: 70%;
             min-height: 1vh;
             display: flex;
 
+            @media only screen and (max-width: 1140px) {
+                flex-direction: column;
+            }
+
             h2 {
                 display: flex;
                 width: 30%;
                 color: white;
                 margin-top: 5%;
+
+                &:not(:first-child) {
+                    color: red;
+                }
+
+                @media only screen and (max-width: 1140px) {
+                    width: 100%;
+                    margin-top: 0;
+                    position: relative;
+                    justify-content: center;
+                }
             }
 
             &__contentWrapper {
                 position: relative;
                 width: 70vw;
-                height: 120vh;
+                min-height: 120vh;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                @media only screen and (max-width: 700px) {
+                    width: 100%;
+                }
 
                 &__content {
                     width: 90%;
                     min-height: 1vh;
                     margin-bottom: 10%;
+
+                    @media only screen and (max-width: 1140px) {
+                        margin: 10% 0 0 0;
+                    }
+
+                    @media only screen and (max-width: 700px) {
+                        width: 100%;
+                    }
 
                     &__container {
                         width: 100%;
@@ -115,40 +174,73 @@
         flex-direction: column;
         color: white;
         margin-top: 15%;
+        overflow-x: hidden;
+
+        @media only screen and (max-width: 1140px) {
+            .opaque {
+                width: 100%;
+                padding: 0;
+                margin: 5% 0 0 0;
+            }
+
+            p {
+                margin: 0;
+                padding: 0 0 0 0;
+            }
+        }
 
         #jobondemand {
             margin-left: 10%;
+
+            @media only screen and (max-width: 1140px) {
+                margin: 0;
+            }
         }
 
         #talentsondemand {
             margin-left: 25%;
+
+            @media only screen and (max-width: 1140px) {
+                margin-left: 0;
+            }
         }
 
         #turnaround {
             margin-left: 10%;
+
+            @media only screen and (max-width: 1140px) {
+                margin-left: 0;
+            }
         }
 
         #careeroportunities {
             margin-left: 25%;
+
+            @media only screen and (max-width: 1140px) {
+                margin-left: 0;
+            }
         }
 
         p {
-            margin-top: 5%;
-            margin-bottom: 5%;
-            width: 754px;
+            width: 70%;
             text-align: justify;
             font-family: Source Sans Pro;
             font-size: 20px;
             font-weight: 400;
             line-height: 25px;
-            text-align: center;
-
+            padding: 5%;
         }
 
         &__wrapper {
             width: 100%;
             min-height: 1vh;
             position: relative;
+
+            @media only screen and (max-width: 1140px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
 
             &__container {
@@ -168,8 +260,6 @@
                 }
             }            
         }
-
-
     }
 
     &__ourWork {
@@ -234,17 +324,22 @@
             text-transform: uppercase;
             color: orange;
             margin: 0;
-            margin-right: 17%;
+            margin-right: 0;
+            width: 100%;
+            position: relative;
         }
 
         &__sections {
             width: 80%;
             min-height: 15vh;
-            margin: 10%;
             margin-top: 5%;
             position: relative;
             display: inline-block;
-            left: 7%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            
 
 
             &__section {
@@ -256,6 +351,10 @@
                 margin-top: 6%;
                 filter: none !important;
                 backdrop-filter: none !important;
+
+                &:last-child {
+                    color: red !important;
+                }
                 
                 
                 p {
