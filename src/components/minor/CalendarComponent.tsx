@@ -1,24 +1,27 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // Dependencies
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, useEffect, useState } from "react";
 import { idUniqueV2 } from "id-unique-protocol";
 
 // Defaults
-import iconsPath from "../../defaults/iconsPath";
+import month_position from "../../defaults/month_position";
 
 // Interfaces
-import ICalendarData from "../../interfaces/ICalendarData";
+import { ICalendarData } from "../../interfaces/ICalendarData";
+import TMonths from "../../interfaces/TMonths";
 
 // CSS
 import "./style/CalendarComponent.scss";
-import month_position from "../../defaults/month_position";
 
 const CalendarComponent = ({
   calendarData,
 }: {
   calendarData: ICalendarData;
 }) => {
-  const [currentMonth, setCurrentMonth] = useState("january");
+  const [currentMonth, setCurrentMonth] = useState("january") as unknown as [
+    TMonths,
+    Dispatch<TMonths>,
+  ];
 
   useEffect(() => {
     const monthsWrapper__monthsElement = document.getElementById(
@@ -36,7 +39,7 @@ const CalendarComponent = ({
     }
   });
 
-  function jumpWithTheButton(side: "left" | "right") {
+  /*function jumpWithTheButton(side: "left" | "right") {
     const monthsWrapper__monthsElement = document.getElementById(
       "monthsWrapper__months",
     ) as HTMLElement;
@@ -44,6 +47,10 @@ const CalendarComponent = ({
     const jump = side == "right" ? 100 : -100;
 
     monthsWrapper__monthsElement.scrollBy(jump, 0);
+  }*/
+
+  function daysChangerHandler(monthName: TMonths) {
+    setCurrentMonth(monthName);
   }
 
   const simulatedFor = (num: number): number[] => {
@@ -54,28 +61,49 @@ const CalendarComponent = ({
     return baseArr;
   };
 
-  const monthPosition =
-    month_position[`${currentMonth}` as "january"] || "january";
-  console.log(monthPosition, currentMonth);
-
   return (
     <div className="calendar">
       <div className="monthsArea">
         <div className="monthsWrapper">
           <div className="monthsWrapper__months" id="monthsWrapper__months">
-            {calendarData.months.map((month) => (
-              <div className="monthsWrapper__months__month" key={idUniqueV2()}>
-                <h1 className="monthsWrapper__months__monthTitle">
-                  {month.name}
-                </h1>
-              </div>
-            ))}
+            {calendarData.months.map(({ name }, index) => {
+              const lastMonth = index === calendarData.months.length - 1;
+              const firstMonth = index === 0;
+
+              const monthNameLowerCase = name.toLowerCase() as TMonths;
+
+              return (
+                <div
+                  className="monthsWrapper__months__month"
+                  key={idUniqueV2()}
+                  onClick={() => daysChangerHandler(monthNameLowerCase)}
+                  style={{
+                    width: lastMonth || firstMonth ? "100%" : "50%",
+                  }}
+                >
+                  <h1
+                    className="monthsWrapper__months__monthTitle"
+                    style={{
+                      color:
+                        currentMonth == monthNameLowerCase
+                          ? "#A64253"
+                          : "white",
+                    }}
+                  >
+                    {monthNameLowerCase}
+                  </h1>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
 
       <div className="calendar__days">
-        {simulatedFor(calendarData.months[0].daysQuantity).map((day) => (
+        {simulatedFor(
+          calendarData.months[Number(month_position[currentMonth])]
+            .daysQuantity,
+        ).map((day) => (
           <div className="calendar__days__day" key={idUniqueV2()}>
             {day}
           </div>

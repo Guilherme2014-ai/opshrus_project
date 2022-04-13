@@ -1,5 +1,7 @@
-interface month {
-  name: string;
+import TMonths from "./TMonths";
+
+interface IMonth {
+  name: TMonths;
   daysQuantity: number;
 
   schedules?: {
@@ -8,6 +10,8 @@ interface month {
   };
 }
 
-export default interface ICalendarData {
-  months: month[];
+interface ICalendarData {
+  months: IMonth[];
 }
+
+export type { IMonth, ICalendarData };

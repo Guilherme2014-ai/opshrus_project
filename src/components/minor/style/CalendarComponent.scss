@@ -4,6 +4,7 @@
     .monthsArea {
         display: flex;
         justify-content: center;
+
         .monthsWrapper {
             width: 200px;
             
@@ -20,17 +21,15 @@
                 }
 
                 .monthsWrapper__months__month {
-                    scroll-snap-align: start;
+                    scroll-snap-align: center;
 
                     flex: none;
 
-                    width: 100%;
-
                     display: flex;
                     justify-content: center;
+                    cursor: pointer;
 
                     .monthsWrapper__months__monthTitle {
-                        cursor: default;
                         font-size: 20px;
                         color: white;
                     }
@@ -42,6 +41,8 @@
     .calendar__days {
         display: flex;
         flex-wrap: wrap;
+
+        margin-left: 20px;
 
         .calendar__days__day {
             transition: all ease 0.4s;

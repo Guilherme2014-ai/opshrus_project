@@ -1,12 +1,10 @@
 @import "../utils_styles/variables";
 
-body {
-    background-color: $primaryColor;
-    overflow-x: hidden;
-}
-
 .mainPage {
     height: 100vh;
+
+    background-color: $primaryColor;
+    overflow-x: hidden;
 
     .mainPage__ContentArea {
         display: flex;

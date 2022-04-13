@@ -4,7 +4,7 @@ export default [
     daysQuantity: 31,
   },
   {
-    name: "Febryary",
+    name: "February",
     daysQuantity: 28,
   },
   {

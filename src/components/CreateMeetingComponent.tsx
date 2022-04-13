@@ -4,6 +4,9 @@ import React from "react";
 // Defaults
 import months from "./defaults/months";
 
+// Interfaces
+import { ICalendarData, IMonth } from "../interfaces/ICalendarData";
+
 // Components
 import { CalendarComponent } from "./minor/CalendarComponent";
 import { Circle } from "./minor/Circle";
@@ -111,7 +114,7 @@ const CreateMeetingComponent = () => {
           <div className="CreateMeetingMain__MeetingArea_box__SUB CreateMeetingMain__MeetingArea_box__calendar">
             <CalendarComponent
               calendarData={{
-                months: months,
+                months: months as IMonth[],
               }}
             />
             <br />
