@@ -42,47 +42,39 @@ const CalendarComponent = ({
     monthsWrapper__monthsElement.scrollBy(jump, 0);
   }
 
+  const simulatedFor = (num: number): number[] => {
+    const baseArr = [];
+
+    for (let index = 0; index <= num; index++) baseArr.push(index);
+
+    return baseArr;
+  };
+
   return (
     <div className="calendar">
-      <div className="monthsWrapper">
-        <div className="monthsWrapper__months" id="monthsWrapper__months">
-          {calendarData.months.map((month) => (
-            <div className="monthsWrapper__months__month">
-              <h1 className="monthsWrapper__months__monthTitle">
-                {month.name}
-              </h1>
-            </div>
-          ))}
+      <div className="monthsArea">
+        <div className="monthsWrapper">
+          <div className="monthsWrapper__months" id="monthsWrapper__months">
+            {calendarData.months.map((month) => (
+              <div className="monthsWrapper__months__month">
+                <h1 className="monthsWrapper__months__monthTitle">
+                  {month.name}
+                </h1>
+              </div>
+            ))}
+          </div>
         </div>
-        <svg
-          key={idUniqueV2()}
-          className="monthsWrapper__leftArrow"
-          xmlns="http://www.w3.org/2000/svg"
-          width="35"
-          height="36"
-          fill="black"
-          viewBox="0 0 16 16"
-          onClick={() => jumpWithTheButton("left")}
-        >
-          <path d={iconsPath.arrowLeft} />
-        </svg>
-        <svg
-          key={idUniqueV2()}
-          className="monthsWrapper__rightArrow"
-          xmlns="http://www.w3.org/2000/svg"
-          width="35"
-          height="36"
-          fill="black"
-          viewBox="0 0 16 16"
-          onClick={() => jumpWithTheButton("right")}
-        >
-          <path d={iconsPath.arrowRight} />
-        </svg>
       </div>
 
-      <div className="days"></div>
+      <div className="calendar__days">
+        {simulatedFor(calendarData.months[1].daysQuantity).map((day) => (
+          <div className="calendar__days__day">{day}</div>
+        ))}
+      </div>
     </div>
   );
 };
 
 export { CalendarComponent };
+//linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)
+//calendarData.months[1].daysQuantity

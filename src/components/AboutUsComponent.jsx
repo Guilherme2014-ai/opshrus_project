@@ -3,7 +3,7 @@ import React from "react";
 
 // Components
 import Nav from "./Nav";
-import Circle from "./minor/Circle";
+import { Circle } from "./minor/Circle";
 import { TiVideo, TiWorld } from "react-icons/ti";
 import { BiMoviePlay } from "react-icons/bi";
 import { HiPhotograph } from "react-icons/hi";
@@ -42,23 +42,22 @@ const AboutUsComponent = () => {
           </div>
         </div>
       </div>
+
       <div className="aboutUs__howWeDoIt">
         <div className="aboutUs__howWeDoIt__container">
           <h2>How we do it</h2>
           <div className="aboutUs__howWeDoIt__container__contentWrapper">
             <Circle
-              gradient="linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)"
-              width="92.99px"
-              height="92.99px"
+              gradientBackground="linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)"
+              diameter="92.99px"
               top="0"
               right="0"
               bottom="0"
               left="2%"
             />
             <Circle
-              gradient="linear-gradient(210.31deg, #715AFF -11.63%, #E682FF 105.87%)"
-              width="214.86px"
-              height="214.86px"
+              gradientBackground="linear-gradient(210.31deg, #715AFF -11.63%, #E682FF 105.87%)"
+              diameter="214.86px"
               top="55%"
               right="0"
               bottom="0"
@@ -66,9 +65,8 @@ const AboutUsComponent = () => {
             />
 
             <Circle
-              gradient="linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)"
-              width="308.7px"
-              height="308.7px"
+              gradientBackground="linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)"
+              diameter="308.7px"
               top="20%"
               right="0"
               bottom="0"
@@ -126,9 +124,8 @@ const AboutUsComponent = () => {
 
         <div className="aboutUs__whyUs__wrapper">
           <Circle
-            gradient="linear-gradient(210.31deg, #715AFF -11.63%, #E682FF 105.87%)"
-            width="145.48px"
-            height="145.48px"
+            gradientBackground="linear-gradient(210.31deg, #715AFF -11.63%, #E682FF 105.87%)"
+            diameter="145.48px"
             top="50%"
             right="0"
             bottom="0"
@@ -154,18 +151,16 @@ const AboutUsComponent = () => {
 
         <div className="aboutUs__whyUs__wrapper">
           <Circle
-            gradient="linear-gradient(210.31deg, #715AFF -11.63%, #E682FF 105.87%)"
-            width="145.48px"
-            height="145.48px"
+            gradientBackground="linear-gradient(210.31deg, #715AFF -11.63%, #E682FF 105.87%)"
+            diameter="145.48px"
             top="25%"
             right="0"
             bottom="0"
             left="13%"
           />
           <Circle
-            gradient="linear-gradient(210.31deg, #715AFF -11.63%, #E682FF 105.87%)"
-            width="172.53px"
-            height="172.53px"
+            gradientBackground="linear-gradient(210.31deg, #715AFF -11.63%, #E682FF 105.87%)"
+            diameter="172.53px"
             top="65%"
             right="0"
             bottom="0"
@@ -192,18 +187,16 @@ const AboutUsComponent = () => {
 
         <div className="aboutUs__whyUs__wrapper">
           <Circle
-            gradient="linear-gradient(210.31deg, #715AFF -11.63%, #E682FF 105.87%)"
-            width="328.67px"
-            height="328.67px"
+            gradientBackground="linear-gradient(210.31deg, #715AFF -11.63%, #E682FF 105.87%)"
+            diameter="328.67px"
             top="70%"
             right="0"
             bottom="0"
             left="20%"
           />
           <Circle
-            gradient="linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)"
-            width="146.32px"
-            height="146.32px"
+            gradientBackground="linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)"
+            diameter="146.32px"
             top="70%"
             right="0"
             bottom="0"

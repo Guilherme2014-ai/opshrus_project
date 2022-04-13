@@ -1,0 +1,65 @@
+.calendar {
+    width: 90%;
+
+    .monthsArea {
+        display: flex;
+        justify-content: center;
+        .monthsWrapper {
+            width: 200px;
+            
+            .monthsWrapper__months {
+                position: relative;
+                display: flex;
+                width: 100%;
+                overflow: auto;
+                scroll-behavior: smooth;
+                scroll-snap-type: x mandatory;
+
+                &::-webkit-scrollbar {
+                    background: transparent;
+                }
+
+                .monthsWrapper__months__month {
+                    scroll-snap-align: start;
+
+                    flex: none;
+
+                    width: 100%;
+
+                    display: flex;
+                    justify-content: center;
+
+                    .monthsWrapper__months__monthTitle {
+                        cursor: default;
+                        font-size: 20px;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .calendar__days {
+        display: flex;
+        flex-wrap: wrap;
+
+        .calendar__days__day {
+            transition: all ease 0.4s;
+            
+            margin: 10px;
+            width: 35px;
+
+            border-radius: 7px;
+
+            background: linear-gradient(210.31deg, rgba($color: #949494, $alpha: 0.3) -11.63%, rgba($color: #ffffff, $alpha: 0.5) 105.87%);
+            text-align: center;
+
+            box-shadow: rgb(124, 122, 122) 2px 5px 13px;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.06);
+            }
+        }
+    }
+}
