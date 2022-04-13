@@ -5,11 +5,13 @@
     align-items: center;
 
     height: 100%;
+    
 
     background: rgb(62,171,205);
     background: linear-gradient(90deg, rgba(62,171,205,1) 0%, rgba(138,146,167,1) 100%);
 
     overflow: hidden;
+    min-height: 100vh;
 
     .CreateMeetingMain__MeetingArea {
         margin-top: 70px;
