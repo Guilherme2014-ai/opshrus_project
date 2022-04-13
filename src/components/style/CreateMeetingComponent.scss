@@ -1,17 +1,14 @@
 .CreateMeetingMain {
-    background: rgb(62,171,205);
-    background: linear-gradient(90deg, rgba(62,171,205,1) 0%, rgba(138,146,167,1) 100%);
-}
-
-.CreateMeetingMain {
     display: flex;
     flex-direction: column;
 
     align-items: center;
 
-    height: 100vh;
+    height: 100%;
 
-    
+    background: rgb(62,171,205);
+    background: linear-gradient(90deg, rgba(62,171,205,1) 0%, rgba(138,146,167,1) 100%);
+
     .CreateMeetingMain__MeetingArea {
         margin-top: 70px;
         
@@ -85,6 +82,10 @@
                     span {
                         color: #FFBA08;
                         margin-left: 50px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
                 }
             }
@@ -94,5 +95,17 @@
     .CreateMeetingMain__rodape {
         font-size: 20px;
         color: white;
+    }
+}
+
+@media (max-width: 900px) {
+    .CreateMeetingMain__MeetingArea_box {
+        flex-direction: column;
+
+        .CreateMeetingMain__MeetingArea_box__inputs {
+            .CreateMeetingMain__MeetingArea_box__inputs__input {
+                width: 100% !important;
+            }
+        }
     }
 }
