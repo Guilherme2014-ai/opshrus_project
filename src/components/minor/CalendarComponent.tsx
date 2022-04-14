@@ -86,8 +86,8 @@ const CalendarComponent = ({
                     style={{
                       color:
                         currentMonth == monthNameLowerCase
-                          ? "#A64253"
-                          : "white",
+                          ? "white"
+                          : "#A64253",
                     }}
                   >
                     {monthNameLowerCase}
