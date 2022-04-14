@@ -5,7 +5,7 @@ import React from "react";
 import months from "./defaults/months";
 
 // Interfaces
-import { ICalendarData, IMonth } from "../interfaces/ICalendarData";
+import { IMonth } from "../interfaces/ICalendarData";
 
 // Components
 import { CalendarComponent } from "./minor/CalendarComponent";
