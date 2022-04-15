@@ -1,8 +1,11 @@
 // Dependencies
 import { idUniqueV2 } from "id-unique-protocol";
 
+// interfaces
+import ITopics from "../interfaces/ITopics";
+
 // add picture field
-const topics = [
+const topics: ITopics[] = [
   {
     id: idUniqueV2(),
     name: "Web / UI Design",

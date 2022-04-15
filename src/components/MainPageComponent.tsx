@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 // Interfaces
 import IMainPage from "../interfaces/IMainPage";

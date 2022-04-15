@@ -1,95 +1,31 @@
-.topicsScrollArea {
-    width: 80%;
-    height: 180px;
-
-    .topicsScrollArea__positionActionLeft {
-        transition: all ease 1s;
-
+.topicsScroll {
+    width: 80vw;
+    
+    .topicsScroll__intermediate {
         display: flex;
-        align-items: center;
+        overflow: auto;
 
-        background-color: rgb(134, 134, 134);
-        
-        position: absolute;
-        z-index: 2;
+        width: 100%;
 
-        width: 50px;
-        height: 150px;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
 
-        border-radius: 10px;
-
-        margin-top: 15px;
-
-        opacity: 0;
-        
-        .topicsScrollArea__positionAction__icon {
-            width: 50px;
-            height: 40px;
+        &::-webkit-scrollbar {
+            background: transparent;
         }
 
-        &:hover {
-            opacity: 1;
-        }
-    }
+        .topicsScroll__intermediate__topic {
+            flex: none;
+            scroll-snap-align: start;
+            margin-right: 30px;
 
-    .topicsScrollArea__positionActionRight {
-        transition: all ease 1s;
+            width: 100px;
+            height: 128px;
 
-        display: flex;
-        align-items: center;
+            border-radius: 10px;
 
-        background-color: rgb(134, 134, 134);
-        
-        position: absolute;
-        right: 0;
-        z-index: 2;
-
-        width: 50px;
-        height: 150px;
-
-        border-radius: 10px;
-
-        margin-top: 15px;
-
-        opacity: 0;
-        
-        .topicsScrollArea__positionAction__icon {
-            width: 50px;
-            height: 40px;
-        }
-
-        &:hover {
-            opacity: 1;
-        }
-    }
-
-    .topicsScrollArea__scrollArea {
-        transition: all ease 1s;
-
-        .topicsScrollArea__scrollArea__topics {
-            display: flex;
-            position: absolute;
-
-            .topicsScrollArea__scrollArea__topics__topic {
-                transition: all ease 0.3s;
-                margin-right: 50px;
-
-                height: 170px;
-                width: 140px;
-
-                border-radius: 20px;
-
-                background: rgb(101,108,126);
-                background: radial-gradient(circle, rgb(87, 92, 104) 0%, rgb(67, 72, 87) 100%,rgba(101,108,126,1) 50%);
-
-                text-align: center;
-                padding-top: 20px;
-
-                &:hover {
-                    transform: scale(1.06);
-                    cursor: pointer;
-                }
-            }
+            background: rgb(48,52,63);
+            background: linear-gradient(324deg, rgba(48,52,63,1) 0%, rgba(229,229,229,1) 150%);
         }
     }
 }

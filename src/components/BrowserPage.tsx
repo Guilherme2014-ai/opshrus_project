@@ -10,14 +10,13 @@ import "./style/BrowserPage.scss";
 
 const BrowserPage = () => {
   return (
-    <div className="mainSearch">
+    <section className="mainSearch">
       <h1 className="mainSearch__discoverTitle">Discover</h1>
       <TopicsScrollComponent />
-
       <h1 className="mainSearch__projectBrowserTitle">Project Browser</h1>
       <ProjectsComponent done={null} />
       <br />
-    </div>
+    </section>
   );
 };
 

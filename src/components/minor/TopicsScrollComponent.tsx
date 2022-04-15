@@ -1,96 +1,49 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Dependencies
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { idUniqueV2 } from "id-unique-protocol";
+
+// Interfaces
+import { topics } from "../../mockedData/topics";
 
 // Defaults
 import iconsPath from "../../defaults/iconsPath";
-import { topics } from "../../mockedData/topics";
 
 // CSS
 import "./style/TopicsScrollComponent.scss";
 
-// Others
-type TSides = "left" | "right";
-let counter = 0;
+// Responsividade faltando
 
 const TopicsScrollComponent = () => {
-  const jump = 380;
-
-  const topicPerClick = 2;
-  const limit = topics.length / topicPerClick;
-
-  const [clickCounter, setClickCounter] = useState(1);
-
-  function scrollMovimentationHandler(side: TSides) {
-    const scrollElement = document.getElementById(
-      "topicsScrollArea__scrollArea",
+  useEffect(() => {
+    const topicsScroll__intermediateElement = document.getElementById(
+      "topicsScroll__intermediate",
     ) as HTMLElement;
 
-    if (side === "right") {
-      counter -= jump;
-      setClickCounter(clickCounter + 1);
-    } else {
-      counter += jump;
-      setClickCounter(clickCounter - 1);
+    topicsScroll__intermediateElement.addEventListener(
+      "wheel",
+      wheelJumpHandler,
+    );
+
+    function wheelJumpHandler(e: WheelEvent) {
+      const isPositive = e.deltaY < 0;
+      const jump = 200;
+
+      topicsScroll__intermediateElement.scrollBy(isPositive ? jump : -jump, 0);
     }
-
-    console.log(counter, clickCounter);
-
-    scrollElement.style.transform = `translateX(${counter}px)`;
-  }
-
+  });
   return (
-    <div className="topicsScrollArea">
-      {counter < 0 && (
-        <div
-          className="topicsScrollArea__positionActionLeft"
-          onClick={() => scrollMovimentationHandler("left")}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="topicsScrollArea__positionAction__icon"
-            viewBox="0 0 16 16"
-          >
-            <path d={iconsPath.arrowLeft} />
-          </svg>
-        </div>
-      )}
+    <div className="topicsScroll">
       <div
-        className="topicsScrollArea__scrollArea"
-        id="topicsScrollArea__scrollArea"
+        className="topicsScroll__intermediate"
+        id="topicsScroll__intermediate"
       >
-        <ul className="topicsScrollArea__scrollArea__topics">
-          {topics.map((topic) => (
-            <li
-              className="topicsScrollArea__scrollArea__topics__topic"
-              key={topic.id}
-            >
-              {topic.name}
-            </li>
-          ))}
-        </ul>
+        {topics.map((topic) => (
+          <div className="topicsScroll__intermediate__topic" key={idUniqueV2()}>
+            {topic.name}
+          </div>
+        ))}
       </div>
-      {clickCounter < limit ? (
-        <div
-          className="topicsScrollArea__positionActionRight"
-          onClick={() => scrollMovimentationHandler("right")}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="topicsScrollArea__positionAction__icon"
-            viewBox="0 0 16 16"
-          >
-            <path d={iconsPath.arrowRight} />
-          </svg>
-        </div>
-      ) : (
-        <div></div>
-      )}
     </div>
   );
 };

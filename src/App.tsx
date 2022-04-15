@@ -8,13 +8,13 @@ import users from "./mockedData/users";
 
 // Components
 import { AboutUsComponent } from "./components/AboutUsComponent";
-
-// CSS
-import "./App.scss";
 import { MainPageComponent } from "./components/MainPageComponent";
 import { userSessionStateContext } from "./contexts/userSessionStateContext";
 import { CreateMeetingComponent } from "./components/CreateMeetingComponent";
 import SignUpComponent from "./components/SignUpComponent";
+
+// CSS
+import "./App.scss";
 
 function App() {
   const [userStringfied, setUserStringfied] = useState(null) as unknown as [

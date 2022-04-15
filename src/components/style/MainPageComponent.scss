@@ -1,15 +1,14 @@
 @import "../utils_styles/variables";
 
 .mainPage {
-    height: 100vh;
-
     background-color: $primaryColor;
-    overflow-x: hidden;
+
+    width: 100%;
+    height: 100%;
 
     .mainPage__ContentArea {
         display: flex;
         flex-direction: row;
-
-        margin-top: 50px;
+        padding-top: 95px;
     }
 }
