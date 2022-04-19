@@ -69,7 +69,9 @@ const ProjectsComponent = ({ done }: { done: boolean | null }) => {
                       backgroundPosition: "center",
                     }}
                   >
-                    <h1>{name}</h1>
+                    <h1 className="projectsArea__column__project__title">
+                      {name}
+                    </h1>
                   </div>
                 );
               })}
