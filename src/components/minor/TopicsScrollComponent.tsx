@@ -32,6 +32,7 @@ const TopicsScrollComponent = () => {
       topicsScroll__intermediateElement.scrollBy(isPositive ? jump : -jump, 0);
     }
   });
+
   return (
     <div className="topicsScroll">
       <div
