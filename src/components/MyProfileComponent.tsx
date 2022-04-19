@@ -8,6 +8,7 @@ import getSessionUserProvider from "../modules/getSessionUserProvider";
 // Defaults
 import colors from "../defaults/colors";
 import { getUserSessionState } from "../contexts/userSessionStateContext";
+import profilePicture from "../defaults/profilePicture";
 
 // Components
 import { Avatar } from "@mui/material";
@@ -16,6 +17,7 @@ import { ProjectsComponent } from "./minor/ProjectsComponent";
 
 // CSS
 import "./style/MyProfileComponent.scss";
+import IUserSession from "../interfaces/IUserSession";
 
 // Others
 type TSubPages = "myProjects" | "myClients";
@@ -31,7 +33,7 @@ const MyProfileComponent = () => {
     Dispatch<TSubPages>,
   ];
 
-  const userSession = getSessionUserProvider(userStringfied);
+  const userSession = getSessionUserProvider(userStringfied) as IUserSession;
 
   function subPageChager(page: TSubPages) {
     setSubPage(page);
@@ -44,7 +46,7 @@ const MyProfileComponent = () => {
           <Avatar
             className="userArea__profilePictureArea__profilePicuture"
             alt="profile_picture"
-            src={userSession.profile_picture}
+            src={userSession ? userSession.profile_picture : profilePicture}
           />
         </div>
         <div className="userArea__textContent">

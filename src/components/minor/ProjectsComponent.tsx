@@ -3,6 +3,9 @@
 import React from "react";
 import { idUniqueV2 } from "id-unique-protocol";
 
+// Interfaces
+import IProject from "../../interfaces/IProject";
+
 // Context
 import { getUserSessionState } from "../../contexts/userSessionStateContext";
 
@@ -11,7 +14,6 @@ import getSessionUserProvider from "../../modules/getSessionUserProvider";
 
 // CSS
 import "./style/ProjectsComponent.scss";
-import IProject from "../../interfaces/IProject";
 
 const ProjectsComponent = ({ done }: { done: boolean | null }) => {
   const [userStringfied, setUserStringfied] = getUserSessionState();
@@ -35,7 +37,7 @@ const ProjectsComponent = ({ done }: { done: boolean | null }) => {
       projectParam?.map((project, index) => {
         const indexPlusOne = index + 1;
 
-        if (indexPlusOne % 3 === 0) {
+        if (indexPlusOne % 3 === 0 || indexPlusOne === projectParam.length) {
           _obj.push(project);
           _columns.push(_obj);
           _obj = [];
@@ -44,6 +46,7 @@ const ProjectsComponent = ({ done }: { done: boolean | null }) => {
         }
       });
 
+      console.log(_obj);
       return _columns;
     }
 
@@ -56,7 +59,7 @@ const ProjectsComponent = ({ done }: { done: boolean | null }) => {
         projectsColumns.map((projectColumn) => {
           return (
             <div className="projectsArea__column" key={idUniqueV2()}>
-              {projectColumn.map((project) => {
+              {projectColumn.map((project, index) => {
                 const { imageLink, name } = project;
 
                 return (
