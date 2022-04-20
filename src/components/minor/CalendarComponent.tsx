@@ -30,6 +30,13 @@ const CalendarComponent = ({
 
     monthsWrapper__monthsElement.addEventListener("wheel", jumpWithTheWheel);
 
+    monthsWrapper__monthsElement.addEventListener("mouseenter", () => {
+      document.body.style.overflowY = "hidden";
+    });
+    monthsWrapper__monthsElement.addEventListener("mouseleave", () => {
+      document.body.style.overflowY = "auto";
+    });
+
     function jumpWithTheWheel(e: WheelEvent) {
       const deltaY = e.deltaY;
 
@@ -38,16 +45,6 @@ const CalendarComponent = ({
       monthsWrapper__monthsElement.scrollBy(jump, 0);
     }
   });
-
-  /*function jumpWithTheButton(side: "left" | "right") {
-    const monthsWrapper__monthsElement = document.getElementById(
-      "monthsWrapper__months",
-    ) as HTMLElement;
-
-    const jump = side == "right" ? 100 : -100;
-
-    monthsWrapper__monthsElement.scrollBy(jump, 0);
-  }*/
 
   function daysChangerHandler(monthName: TMonths) {
     setCurrentMonth(monthName);

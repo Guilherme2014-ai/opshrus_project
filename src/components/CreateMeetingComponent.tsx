@@ -47,7 +47,7 @@ const CreateMeetingComponent = () => {
         top="28%"
         right="0"
         bottom="0"
-        left="80%"
+        left="75%"
       />
       <Circle
         gradientBackground="linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)"
@@ -126,7 +126,6 @@ const CreateMeetingComponent = () => {
           </div>
         </div>
       </div>
-      <br />
       <br />
       <h1 className="CreateMeetingMain__rodape">
         <strong>CONTENTA</strong>
