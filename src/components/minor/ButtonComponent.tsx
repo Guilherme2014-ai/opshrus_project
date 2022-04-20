@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Dependencies
 import React from "react";
 
@@ -8,16 +9,19 @@ const ButtonComponent = ({
   title,
   textColor,
   backgroundColor,
+  onClick,
 }: {
   title: string;
   textColor: string;
   backgroundColor: string;
+  onClick?: () => any;
 }) => (
   <button
     style={{
       background: backgroundColor && backgroundColor,
       color: textColor && textColor,
     }}
+    onClick={onClick}
     className="button"
     id="button"
   >

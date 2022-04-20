@@ -55,7 +55,6 @@ const ProjectsComponent = ({
         }
       });
 
-      console.log(_obj);
       return _columns;
     }
 

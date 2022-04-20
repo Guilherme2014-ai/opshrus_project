@@ -1,0 +1,141 @@
+@import "../utils_styles/variables";
+
+@mixin button {
+    border: none;
+    border-radius: 7px;
+
+    padding: 5px;
+
+    font-size: 10px;
+
+    width: 90px;
+
+    color: white;
+
+    transition: all ease 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.editProfileContainer {
+    display: flex;
+
+    background-color: $secondColor;
+    padding: 40px;
+
+    width: 77%;
+    height: 400px;
+
+    border-radius: 8px;
+
+    margin-top: 50px;
+
+    .subArea {
+        width: 100%;
+    }
+
+    .editProfileContainer--firstArea {
+        .editProfileContainer--firstArea__form {
+            display: flex;
+
+            flex-direction: column;
+            justify-content: space-between;
+
+            height: 100%;
+
+            .editProfileContainer--firstArea__form__inputArea {
+                width: 300px;
+
+                label {
+                    margin-left: 8px;
+                    font-size: 0.9pc;
+
+                    color: white;
+                }
+
+                input {
+                    width: 100%;
+
+                    border: none;
+                    border-radius: 10px;
+
+                    padding: 2px;
+                    padding-left: 10px;
+
+                    outline: none;
+                }
+            }
+        }
+    }
+    .editProfileContainer--secondArea {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .editProfileContainer--secondArea__avatarInfos {
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+
+            .editProfileContainer--secondArea__avatarInfos__avatar {
+                width: 200px;
+                height: 200px;
+
+                margin-left: 50px;
+            }
+            .editProfileContainer--secondArea__avatarInfos__selectAvartarAreaButton {
+                padding-top: 20px;
+
+                button {
+                    @include button;
+
+                    width: 120px;
+
+                    border-radius: 20px;
+
+                    background-color: $thirdColor;
+
+                    color: white;
+                }
+            }
+        }
+        
+        .editProfileContainer--secondArea__confirm_CancelButtonsArea {
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+                @include button;
+
+                margin-left: 10px;
+            }
+
+            .editProfileContainer--secondArea__confirm_CancelButtonsArea--confirm {
+                background-color: $selectedIconSideBar;
+            }
+            .editProfileContainer--secondArea__confirm_CancelButtonsArea--cancel {
+                background-color: $thirdColor;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .editProfileContainer {
+        flex-direction: column-reverse;
+
+        width: 70%;
+        height: 100%;
+
+        align-items: center;
+
+        .editProfileContainer--firstArea {
+            margin: 40px;
+            .editProfileContainer--firstArea__form {
+                align-items: center;
+            }
+    }   }
+}
