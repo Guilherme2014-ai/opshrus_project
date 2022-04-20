@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// Dependencies
+import React from "react";
+
+// Componentes
 import { Circle } from "./minor/Circle";
 
+// CSS
 import "./style/SignUpComponent.scss";
 
 export default function SignUpComponent(namePage: any) {
