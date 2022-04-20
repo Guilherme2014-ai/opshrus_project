@@ -11,10 +11,16 @@ import "./style/BrowserPage.scss";
 const BrowserPage = () => {
   return (
     <section className="mainSearch">
-      <h1 className="mainSearch__discoverTitle">Discover</h1>
+      <h1 className="mainSearch__discoverTitle">
+        <strong>Discover</strong>
+      </h1>
       <TopicsScrollComponent />
+
+      <br />
+      <br />
+
       <h1 className="mainSearch__projectBrowserTitle">Project Browser</h1>
-      <ProjectsComponent done={null} />
+      <ProjectsComponent done={null} background={false} />
       <br />
     </section>
   );

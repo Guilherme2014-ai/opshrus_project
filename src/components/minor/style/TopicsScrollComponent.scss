@@ -1,6 +1,19 @@
+@import "../../utils_styles/variables";
+
 .topicsScroll {
-    width: 80vw;
-    
+    position: relative;
+    width: 74vw;
+
+    .topicsScroll--horizontalGradient {
+        position: absolute;
+        
+        width: inherit;
+        height: 100%;
+
+        background: linear-gradient(to left, $primaryColor 0.5%, transparent 20%);
+        pointer-events: none;
+    }
+
     .topicsScroll__intermediate {
         display: flex;
         overflow: auto;
@@ -25,7 +38,34 @@
             border-radius: 10px;
 
             background: rgb(48,52,63);
-            background: linear-gradient(324deg, rgba(48,52,63,1) 0%, rgba(229,229,229,1) 150%);
+            background: linear-gradient(324deg, rgba(48,52,63,1) 0%, #E5E5E5 150%);
+
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.6rem;
+
+            
+            text-align: center;
+            
+            padding-top: 25px;
+            
+            word-wrap: break-word;
+
+            strong {
+                cursor: default;
+                color: white;
+            }
         }
+    }
+}
+
+@media (max-width: 1100px) {
+    .topicsScroll {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 810px) {
+    .topicsScroll {
+        width: 63vw;
     }
 }

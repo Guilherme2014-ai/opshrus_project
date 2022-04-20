@@ -25,6 +25,15 @@ const TopicsScrollComponent = () => {
       wheelJumpHandler,
     );
 
+    topicsScroll__intermediateElement.addEventListener(
+      "mouseenter",
+      () => (document.body.style.overflowY = "hidden"),
+    );
+    topicsScroll__intermediateElement.addEventListener(
+      "mouseleave",
+      () => (document.body.style.overflowY = "auto"),
+    );
+
     function wheelJumpHandler(e: WheelEvent) {
       const isPositive = e.deltaY < 0;
       const jump = 200;
@@ -34,14 +43,15 @@ const TopicsScrollComponent = () => {
   });
 
   return (
-    <div className="topicsScroll">
+    <div className="topicsScroll" id="topicsScroll">
+      <div className="topicsScroll--horizontalGradient"></div>
       <div
         className="topicsScroll__intermediate"
         id="topicsScroll__intermediate"
       >
         {topics.map((topic) => (
           <div className="topicsScroll__intermediate__topic" key={idUniqueV2()}>
-            {topic.name}
+            <strong>{topic.name}</strong>
           </div>
         ))}
       </div>

@@ -27,7 +27,9 @@ const DashboardComponent = () => {
 
   return (
     <div className="mainDashboard__ContentArea__ProjectsDashboard">
-      <h1 className="dashboard__h1">Dashboard</h1>
+      <h1 className="dashboard__h1">
+        <strong>Dashboard</strong>
+      </h1>
       <ul>
         <li
           onClick={() => subPageChager("ongoingProjects")}

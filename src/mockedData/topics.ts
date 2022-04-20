@@ -8,55 +8,59 @@ import ITopics from "../interfaces/ITopics";
 const topics: ITopics[] = [
   {
     id: idUniqueV2(),
-    name: "Web / UI Design",
+    name: "WEB / UI DESIGN",
   },
   {
     id: idUniqueV2(),
-    name: "Branding",
+    name: "BRANDING",
   },
   {
     id: idUniqueV2(),
-    name: "Animation",
+    name: "ANIMATION",
   },
   {
     id: idUniqueV2(),
-    name: "Photography",
+    name: "PHOTOGRAPHY",
   },
   {
     id: idUniqueV2(),
-    name: "Video",
+    name: "VIDEO",
   },
   {
     id: idUniqueV2(),
-    name: "Pixel Art",
+    name: "PIXEL ART",
   },
   {
     id: idUniqueV2(),
-    name: "Default",
+    name: "DEFAULT",
   },
   {
     id: idUniqueV2(),
-    name: "Default",
+    name: "DEFAULT",
   },
   {
     id: idUniqueV2(),
-    name: "Default",
+    name: "DEFAULT",
   },
   {
     id: idUniqueV2(),
-    name: "Default LL",
+    name: "DEFAULT",
   },
   {
     id: idUniqueV2(),
-    name: "Default LL",
+    name: "DEFAULT",
   },
   {
     id: idUniqueV2(),
-    name: "Default LL",
+    name: "DEFAULT",
   },
   {
     id: idUniqueV2(),
-    name: "Default LL",
+    name: "DEFAULT",
+  },
+  {
+    id: idUniqueV2(),
+    name: "DEFAULT",
   },
 ];
 

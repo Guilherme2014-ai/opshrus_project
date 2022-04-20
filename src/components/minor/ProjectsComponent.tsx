@@ -9,13 +9,22 @@ import IProject from "../../interfaces/IProject";
 // Context
 import { getUserSessionState } from "../../contexts/userSessionStateContext";
 
+// Defaults
+import colors from "../../defaults/colors";
+
 // Modules
 import getSessionUserProvider from "../../modules/getSessionUserProvider";
 
 // CSS
 import "./style/ProjectsComponent.scss";
 
-const ProjectsComponent = ({ done }: { done: boolean | null }) => {
+const ProjectsComponent = ({
+  done,
+  background,
+}: {
+  done: boolean | null;
+  background?: boolean;
+}) => {
   const [userStringfied, setUserStringfied] = getUserSessionState();
   const userSession = getSessionUserProvider(userStringfied) || null;
 
@@ -54,7 +63,12 @@ const ProjectsComponent = ({ done }: { done: boolean | null }) => {
   }
 
   return (
-    <div className="projectsArea">
+    <div
+      className="projectsArea"
+      style={{
+        backgroundColor: background === false ? "" : colors.secondColor,
+      }}
+    >
       {projectsColumns && projects ? (
         projectsColumns.map((projectColumn) => {
           return (

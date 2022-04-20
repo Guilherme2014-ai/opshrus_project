@@ -7,7 +7,6 @@
 
     width: 90%;
     margin-top: 23px;
-    background-color: $secondColor;
     border-radius: 10px;
 
     padding: 20px;
@@ -30,7 +29,7 @@
             cursor: pointer;
             transition: all ease 0.3s;
     
-            margin: 6px;
+            margin: 15px;
             border-radius: 8px;
         
             text-align: center;
@@ -44,7 +43,7 @@
             }
         
             &:hover {
-                transform: scale(1.02);
+                transform: scale(1.03);
             }
         }
     }
