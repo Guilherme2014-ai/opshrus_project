@@ -29,18 +29,6 @@ const pages = {
 };
 
 const MainPageComponent = ({ namePage }: IMainPage) => {
-  // When Mobile's version be received
-  /*const [mobileVersion, setMobileVersion] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("resize", widthHandler);
-
-    function widthHandler() {
-      const match = window.matchMedia("(max-width: 700px)").matches;
-      setMobileVersion(match);
-    }
-  });*/
-
   return (
     <section className="mainPage">
       <SecondNavComponent />
