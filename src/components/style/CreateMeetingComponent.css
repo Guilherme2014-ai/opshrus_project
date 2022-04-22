@@ -1,0 +1,134 @@
+.CreateMeetingMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #3eabcd;
+  background: -webkit-gradient(linear, left top, right top, from(#3eabcd), to(#8a92a7));
+  background: linear-gradient(90deg, #3eabcd 0%, #8a92a7 100%);
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea {
+  margin-top: 60px;
+  width: 70vw;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_boxTitle {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-backdrop-filter: blur(42px);
+          backdrop-filter: blur(42px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__SUB {
+  width: 100%;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__inputs {
+  padding: 20px;
+  height: 100%;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__inputs label {
+  margin-top: 10px;
+  color: white;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__inputs .CreateMeetingMain__MeetingArea_box__inputs__input {
+  -webkit-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  -webkit-box-shadow: #747474 0px -2px 10px;
+          box-shadow: #747474 0px -2px 10px;
+  margin-top: 5px;
+  width: 90%;
+  padding: 1px;
+  padding-bottom: 4px;
+  padding-left: 4px;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__inputs .CreateMeetingMain__MeetingArea_box__inputs__input:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__inputs .CreateMeetingMain__MeetingArea_box__inputs__input::-webkit-input-placeholder {
+  color: #A64253;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__inputs .CreateMeetingMain__MeetingArea_box__inputs__input:-ms-input-placeholder {
+  color: #A64253;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__inputs .CreateMeetingMain__MeetingArea_box__inputs__input::-ms-input-placeholder {
+  color: #A64253;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__inputs .CreateMeetingMain__MeetingArea_box__inputs__input::placeholder {
+  color: #A64253;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__calendar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__calendar .CreateMeetingMain__MeetingArea_box__calendar__buttons {
+  margin-left: 20px;
+  color: red;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__calendar .CreateMeetingMain__MeetingArea_box__calendar__buttons span {
+  color: #FFBA08;
+  margin-left: 50px;
+}
+
+.CreateMeetingMain .CreateMeetingMain__MeetingArea .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__calendar .CreateMeetingMain__MeetingArea_box__calendar__buttons span:hover {
+  cursor: pointer;
+}
+
+.CreateMeetingMain .CreateMeetingMain__rodape {
+  font-size: 20px;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .CreateMeetingMain__MeetingArea_box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .CreateMeetingMain__MeetingArea_box .CreateMeetingMain__MeetingArea_box__inputs .CreateMeetingMain__MeetingArea_box__inputs__input {
+    width: 100% !important;
+  }
+}
+/*# sourceMappingURL=CreateMeetingComponent.css.map */

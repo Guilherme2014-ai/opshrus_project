@@ -1,0 +1,38 @@
+.mainDashboard__ContentArea__ProjectsDashboard {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.mainDashboard__ContentArea__ProjectsDashboard .dashboard__h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 3pc;
+  color: white;
+}
+
+.mainDashboard__ContentArea__ProjectsDashboard ul {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.8pc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  margin-top: 45px;
+  color: #979cac;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .mainDashboard__ContentArea__ProjectsDashboard ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainDashboard__ContentArea__ProjectsDashboard ul li {
+    margin-top: 20px;
+  }
+}
+/*# sourceMappingURL=DashboardComponent.css.map */

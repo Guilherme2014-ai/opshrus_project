@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,gBAAgB,CAAC;EACb,QAAQ,EAAE,QAAQ;EAClB,OAAO,EAAE,CAAC;EAEV,OAAO,EAAE,IAAI;EAEb,gBAAgB,ECRL,OAAO;CDmBrB;;AAjBD,AAQI,gBARY,CAQZ,yBAAyB,CAAC;EACtB,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,KAAK;CAMf;;AAhBL,AAYQ,gBAZQ,CAQZ,yBAAyB,CAIrB,EAAE,CAAC;EACC,KAAK,ECbJ,OAAO;EDcR,SAAS,EAAE,IAAI;CAClB",
+    "sources": [
+        "LeftSideBarComponent.scss",
+        "../utils_styles/_variables.scss"
+    ],
+    "names": [],
+    "file": "LeftSideBarComponent.css"
+}

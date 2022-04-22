@@ -1,0 +1,17 @@
+.mainLeftSideBar {
+  position: relative;
+  z-index: 5;
+  padding: 20px;
+  background-color: #30343F;
+}
+
+.mainLeftSideBar .mainLeftSideBar__divisor {
+  margin-top: 20px;
+  width: 180px;
+}
+
+.mainLeftSideBar .mainLeftSideBar__divisor h1 {
+  color: #979cac;
+  font-size: 20px;
+}
+/*# sourceMappingURL=LeftSideBarComponent.css.map */
