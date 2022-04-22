@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Dependencies
-import React from "react";
+import React, { useState } from "react";
+import { idUniqueV2 } from "id-unique-protocol";
 
 // Components
 import { Avatar } from "@mui/material";
@@ -18,10 +20,10 @@ import getSessionUserProvider from "../modules/getSessionUserProvider";
 
 // Defaults
 import profilePicture from "../defaults/profilePicture";
+import iconsPath from "../defaults/iconsPath";
 
 // CSS
 import "./style/EditProfileComponent.scss";
-import iconsPath from "../defaults/iconsPath";
 
 const EditProfileComponent = () => {
   const [stringfiedUser, setStringfiedUser] = getUserSessionState();
@@ -60,23 +62,52 @@ const EditProfileComponent = () => {
     },
   ];
 
+  const allInputsState = {} as any;
+
+  inputs.forEach((input) => {
+    allInputsState[input.slug] = {
+      readOnly: true,
+    };
+  });
+
+  const [inputsState, setInputsState] = useState(allInputsState);
+
+  function changeInputState(slug: string) {
+    if (inputsState) {
+      inputsState[slug] = { readOnly: !inputsState[slug].readOnly };
+      const newInputsState = { ...inputsState };
+
+      setInputsState(newInputsState);
+    }
+  }
+
+  // Cado de Responsividade...
+
   return (
     <section className="mainSectionEditProfilePicture">
+      <h2 className="editProfileContainer__title">
+        <strong>EDIT PROFILE</strong>
+      </h2>
       <div className="editProfileContainer">
         <div className="editProfileContainer--firstArea subArea">
           <form className="editProfileContainer--firstArea__form">
             {inputs.map((input: input) => {
+              const inputState = inputsState[input.slug].readOnly;
+
               return (
-                <div className="editProfileContainer--firstArea__form__inputArea">
-                  <label htmlFor="username">{input.label}</label>
+                <div
+                  className="editProfileContainer--firstArea__form__inputArea"
+                  key={idUniqueV2()}
+                >
+                  <label htmlFor={input.slug}>{input.label}</label>
                   <br />
                   <div className="editProfileContainer--firstArea__form__inputArea__input_svg">
                     <input
                       type={input.type}
                       name={input.slug}
                       id={input.slug}
-                      placeholder={input.placeholder}
-                      readOnly
+                      placeholder={inputState ? input.placeholder : ""}
+                      readOnly={inputState}
                     />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +116,7 @@ const EditProfileComponent = () => {
                       fill="white"
                       className="bi bi-pencil"
                       viewBox="0 0 16 16"
+                      onClick={() => changeInputState(input.slug)}
                     >
                       <path d={iconsPath.pencil} />
                     </svg>

@@ -25,6 +25,12 @@ body {
 
 .mainSectionEditProfilePicture {
     width: 100%;
+    margin-top: 40px;
+
+    .editProfileContainer__title {
+        font-size: 1.4pc;
+        color: white;
+    }
 }
 
 .editProfileContainer {
@@ -39,7 +45,7 @@ body {
 
     border-radius: 8px;
 
-    margin-top: 50px;
+    margin-top: 20px;
 
     .subArea {
         width: 100%;
@@ -52,7 +58,7 @@ body {
             flex-direction: column;
             justify-content: space-between;
 
-            height: 400px;
+            height: 370px;
 
             .editProfileContainer--firstArea__form__inputArea {
                 width: 350px;
@@ -76,6 +82,10 @@ body {
 
                         margin-left: 10px;
                         background-color: $selectedIconSideBar;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
 
                     input {
@@ -148,13 +158,10 @@ body {
 
 @media (max-width: 1280px) {
     .mainSectionEditProfilePicture {
-        display: flex;
-        justify-content: center;
-        
         .editProfileContainer {
             flex-direction: column-reverse;
     
-            width: 70%;
+            width: 95%;
             height: 100%;
     
             align-items: center;
