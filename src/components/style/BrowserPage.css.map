@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AACI,WADO,CACP,0BAA0B,EAD9B,WAAW,CACqB,gCAAgC,CAAC;EACzD,WAAW,EAAE,6BAA6B;EAC1C,KAAK,EAAE,KAAK;CACf",
-    "sources": [
-        "BrowserPage.scss"
-    ],
-    "names": [],
-    "file": "BrowserPage.css"
-}

@@ -47,14 +47,17 @@
             transition: all ease 0.4s;
             
             margin: 10px;
+            padding: 1px;
+
             width: 35px;
 
-            border-radius: 7px;
+            border-radius: 12px;
 
-            background: linear-gradient(210.31deg, rgba($color: #949494, $alpha: 0.3) -11.63%, rgba($color: #ffffff, $alpha: 0.5) 105.87%);
             text-align: center;
 
             box-shadow: rgb(124, 122, 122) 2px 5px 13px;
+
+            background-color: #84b0be;
 
             &:hover {
                 cursor: pointer;

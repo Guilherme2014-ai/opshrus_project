@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,OAAO,CAAC;EACJ,aAAa,EAAE,GAAG;EAClB,QAAQ,EAAE,QAAQ;CACrB",
-    "sources": [
-        "Circle.scss"
-    ],
-    "names": [],
-    "file": "Circle.css"
-}

@@ -1,0 +1,31 @@
+.scheduleCreatorContainer {
+    position: absolute;
+
+    background-color: white;
+    border-radius: 19px;
+
+    width: 130px;
+    height: 150px;
+
+    .scheduleCreatorContainer__intermediate {
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+        overflow-y: auto;
+
+        text-align: center;
+
+
+        &::-webkit-scrollbar {
+            background: transparent;
+        }
+
+        h2 {
+            cursor: pointer;
+            margin-left: 10px;
+
+            font: 500 23px "Source Sans Pro", sans-serif;
+        }
+    }
+}

@@ -12,6 +12,8 @@ import TMonths from "../../interfaces/TMonths";
 
 // CSS
 import "./style/CalendarComponent.scss";
+import { ScheduleCreatorComponent } from "./ScheduleCreatorComponent";
+import colors from "../../defaults/colors";
 
 const CalendarComponent = ({
   calendarData,
@@ -100,11 +102,36 @@ const CalendarComponent = ({
         {simulatedFor(
           calendarData.months[Number(month_position[currentMonth])]
             .daysQuantity,
-        ).map((day) => (
-          <div className="calendar__days__day" key={idUniqueV2()}>
-            {day}
-          </div>
-        ))}
+        ).map((day) => {
+          const [createScheduleModal, setCreateScheduleModal] = useState(false);
+
+          const date = {
+            month: currentMonth,
+            day,
+          };
+
+          return (
+            <div>
+              <div
+                className="calendar__days__day"
+                key={idUniqueV2()}
+                style={{
+                  background: createScheduleModal
+                    ? colors.selectedIconSideBar
+                    : "linear-gradient(120deg, #E5E5E5, #84b0be)",
+                }}
+                onClick={() =>
+                  setCreateScheduleModal(
+                    (createScheduleModalParam) => !createScheduleModalParam,
+                  )
+                }
+              >
+                {day}
+              </div>
+              {createScheduleModal && <ScheduleCreatorComponent date={date} />}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
