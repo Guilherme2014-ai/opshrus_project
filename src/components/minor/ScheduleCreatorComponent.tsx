@@ -1,5 +1,6 @@
 // Dependencies
 import React from "react";
+import { idUniqueV2 } from "id-unique-protocol";
 
 // Interfaces
 import IDate from "../../interfaces/IDate";
@@ -24,7 +25,7 @@ export function ScheduleCreatorComponent({ date }: { date: IDate }) {
     <div className="scheduleCreatorContainer">
       <div className="scheduleCreatorContainer__intermediate">
         {mockedAvaliableHours.map((hour) => {
-          return <h2>{hour}</h2>;
+          return <h2 key={idUniqueV2()}>{hour}</h2>;
         })}
       </div>
     </div>

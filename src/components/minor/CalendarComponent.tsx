@@ -5,6 +5,10 @@ import { idUniqueV2 } from "id-unique-protocol";
 
 // Defaults
 import month_position from "../../defaults/month_position";
+import colors from "../../defaults/colors";
+
+// Components
+import { ScheduleCreatorComponent } from "./ScheduleCreatorComponent";
 
 // Interfaces
 import { ICalendarData } from "../../interfaces/ICalendarData";
@@ -12,18 +16,20 @@ import TMonths from "../../interfaces/TMonths";
 
 // CSS
 import "./style/CalendarComponent.scss";
-import { ScheduleCreatorComponent } from "./ScheduleCreatorComponent";
-import colors from "../../defaults/colors";
 
 const CalendarComponent = ({
   calendarData,
 }: {
   calendarData: ICalendarData;
 }) => {
+  // Hooks
   const [currentMonth, setCurrentMonth] = useState("january") as unknown as [
     TMonths,
     Dispatch<TMonths>,
   ];
+  const [createScheduleDay, setCreateScheduleDay] = useState(
+    null,
+  ) as unknown as [null | number, Dispatch<null | number>];
 
   useEffect(() => {
     const monthsWrapper__monthsElement = document.getElementById(
@@ -41,12 +47,13 @@ const CalendarComponent = ({
 
     function jumpWithTheWheel(e: WheelEvent) {
       const deltaY = e.deltaY;
-
       const jump = deltaY < 0 ? 100 : -100;
 
       monthsWrapper__monthsElement.scrollBy(jump, 0);
     }
   });
+
+  //---------Functions----------------------------------------------------------
 
   function daysChangerHandler(monthName: TMonths) {
     setCurrentMonth(monthName);
@@ -59,6 +66,8 @@ const CalendarComponent = ({
 
     return baseArr;
   };
+
+  //-----------------------------------------------------------------------------
 
   return (
     <div className="calendar">
@@ -103,32 +112,33 @@ const CalendarComponent = ({
           calendarData.months[Number(month_position[currentMonth])]
             .daysQuantity,
         ).map((day) => {
-          const [createScheduleModal, setCreateScheduleModal] = useState(false);
-
+          const isScheduleActive = createScheduleDay === day;
           const date = {
             month: currentMonth,
             day,
           };
 
           return (
-            <div>
+            <div key={idUniqueV2()}>
               <div
                 className="calendar__days__day"
-                key={idUniqueV2()}
                 style={{
-                  background: createScheduleModal
-                    ? colors.selectedIconSideBar
-                    : "linear-gradient(120deg, #E5E5E5, #84b0be)",
+                  background:
+                    createScheduleDay === day
+                      ? colors.selectedIconSideBar
+                      : "linear-gradient(120deg, #E5E5E5, #84b0be)",
                 }}
-                onClick={() =>
-                  setCreateScheduleModal(
-                    (createScheduleModalParam) => !createScheduleModalParam,
-                  )
-                }
+                onClick={() => {
+                  isScheduleActive
+                    ? setCreateScheduleDay(null)
+                    : setCreateScheduleDay(day);
+                }}
               >
                 {day}
               </div>
-              {createScheduleModal && <ScheduleCreatorComponent date={date} />}
+              {createScheduleDay === day && (
+                <ScheduleCreatorComponent date={date} />
+              )}
             </div>
           );
         })}
@@ -138,5 +148,3 @@ const CalendarComponent = ({
 };
 
 export { CalendarComponent };
-//linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)
-//calendarData.months[1].daysQuantity
