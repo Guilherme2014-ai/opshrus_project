@@ -42,7 +42,7 @@ const SecondNavComponent = () => {
     >
       {userSession && (
         <>
-          <h2>Contenta</h2>
+          <h2>CONTENTA</h2>
           <div>
             <small>{userSession.name.toLocaleUpperCase()}</small>{" "}
             <Avatar

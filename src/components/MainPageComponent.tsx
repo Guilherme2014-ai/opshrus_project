@@ -39,7 +39,7 @@ const MainPageComponent = ({ namePage }: IMainPage) => {
           pageSelected={namePage}
           divisors={[
             {
-              title: "Menu",
+              title: "MENU",
               sideBarsIcons: [
                 {
                   title: "Home",
@@ -64,7 +64,7 @@ const MainPageComponent = ({ namePage }: IMainPage) => {
               ],
             },
             {
-              title: "Creator Menu",
+              title: "CREATOR MENU",
               sideBarsIcons: [
                 {
                   title: "Profile",

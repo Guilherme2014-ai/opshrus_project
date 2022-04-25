@@ -20,7 +20,9 @@ const BrowserPage = () => {
       <br />
 
       <h1 className="mainSearch__projectBrowserTitle">Project Browser</h1>
-      <ProjectsComponent done={null} background={false} />
+      <div className="mainSearch__projectsArea">
+        <ProjectsComponent done={null} background={false} />
+      </div>
       <br />
     </section>
   );
