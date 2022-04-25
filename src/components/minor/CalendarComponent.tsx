@@ -126,7 +126,7 @@ const CalendarComponent = ({
                   background:
                     createScheduleDay === day
                       ? colors.selectedIconSideBar
-                      : "linear-gradient(120deg, #E5E5E5, #84b0be)",
+                      : "linear-gradient(120deg, #b6c5ca, #759eaa)",
                 }}
                 onClick={() => {
                   isScheduleActive

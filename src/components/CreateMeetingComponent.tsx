@@ -67,7 +67,7 @@ const CreateMeetingComponent = () => {
       />
       <div className="CreateMeetingMain__MeetingArea">
         <h1 className="CreateMeetingMain__MeetingArea_boxTitle">
-          <strong>BOOK A MEETING</strong>
+          <strong>BOOK A VIRTUAL MEETING</strong>
         </h1>
         <div className="CreateMeetingMain__MeetingArea_box">
           <div className="CreateMeetingMain__MeetingArea_box__SUB CreateMeetingMain__MeetingArea_box__inputs">
