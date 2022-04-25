@@ -28,6 +28,9 @@ const CalendarComponent = ({
     TMonths,
     Dispatch<TMonths>,
   ];
+  const [specialMonthActive, setSpecialMonthActive] = useState(
+    null,
+  ) as unknown as ["first" | "last", Dispatch<"first" | "last">];
   const [createScheduleDay, setCreateScheduleDay] = useState(
     null,
   ) as unknown as [null | number, Dispatch<null | number>];
@@ -110,7 +113,8 @@ const CalendarComponent = ({
               const lastMonth = index === calendarData.months.length - 1;
               const firstMonth = index === 0;
 
-              const monthNameLowerCase = name.toLowerCase() as TMonths;
+              const monthNameLowerCase = name.toLocaleLowerCase() as TMonths;
+              const monthNameUpperCase = name.toLocaleUpperCase();
 
               return (
                 <div
@@ -118,7 +122,7 @@ const CalendarComponent = ({
                   key={idUniqueV2()}
                   onClick={() => daysChangerHandler(monthNameLowerCase)}
                   style={{
-                    width: lastMonth || firstMonth ? "100%" : "50%",
+                    width: "50%",
                   }}
                 >
                   <h1
@@ -130,7 +134,7 @@ const CalendarComponent = ({
                           : "#A64253",
                     }}
                   >
-                    {monthNameLowerCase}
+                    {monthNameUpperCase}
                   </h1>
                 </div>
               );

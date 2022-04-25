@@ -14,6 +14,9 @@ import { Circle } from "./minor/Circle";
 // CSS
 import "./style/CreateMeetingComponent.scss";
 
+// Tiles escroláveis com botões de click/left do mouse
+// Refatorar estrutura da página, de forma que os inputs sigam o mesmo tamanho que os meses
+
 const CreateMeetingComponent = () => {
   return (
     <section className="CreateMeetingMain">
@@ -71,45 +74,51 @@ const CreateMeetingComponent = () => {
         </h1>
         <div className="CreateMeetingMain__MeetingArea_box">
           <div className="CreateMeetingMain__MeetingArea_box__SUB CreateMeetingMain__MeetingArea_box__inputs">
-            <label htmlFor="complete_name">Full Name</label>
+            <div>
+              <label htmlFor="complete_name">Full Name</label>
+              <input
+                type="text"
+                name="complete_name"
+                className="CreateMeetingMain__MeetingArea_box__inputs__input"
+                id="complete_name"
+                placeholder="Complete Name"
+              />
+            </div>
             <br />
-            <input
-              type="text"
-              name="complete_name"
-              className="CreateMeetingMain__MeetingArea_box__inputs__input"
-              id="complete_name"
-              placeholder="Complete Name"
-            />
+            <div>
+              <label htmlFor="company">Company Name</label>
+              <input
+                type="text"
+                name="company"
+                className="CreateMeetingMain__MeetingArea_box__inputs__input"
+                id="company"
+                placeholder="Company"
+              />
+            </div>
             <br />
-            <label htmlFor="company">Company Name</label>
+            <div>
+              <label htmlFor="email">Email</label>
+              <br />
+              <input
+                type="email"
+                name="email"
+                className="CreateMeetingMain__MeetingArea_box__inputs__input"
+                id="email"
+                placeholder="Email"
+              />
+            </div>
             <br />
-            <input
-              type="text"
-              name="company"
-              className="CreateMeetingMain__MeetingArea_box__inputs__input"
-              id="company"
-              placeholder="Company"
-            />
-            <br />
-            <label htmlFor="email">Email</label>
-            <br />
-            <input
-              type="email"
-              name="email"
-              className="CreateMeetingMain__MeetingArea_box__inputs__input"
-              id="email"
-              placeholder="Email"
-            />
-            <br />
-            <label htmlFor="work">Work</label>
-            <br />
-            <input
-              type="text"
-              name="work"
-              className="CreateMeetingMain__MeetingArea_box__inputs__input"
-              id="work"
-              placeholder="Work"
-            />
+            <div>
+              <label htmlFor="work">Work</label>
+              <br />
+              <input
+                type="text"
+                name="work"
+                className="CreateMeetingMain__MeetingArea_box__inputs__input"
+                id="work"
+                placeholder="Work"
+              />
+            </div>
           </div>
           <div className="CreateMeetingMain__MeetingArea_box__SUB CreateMeetingMain__MeetingArea_box__calendar">
             <CalendarComponent
