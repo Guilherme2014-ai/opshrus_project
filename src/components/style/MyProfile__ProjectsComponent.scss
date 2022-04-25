@@ -20,7 +20,7 @@
         border-radius: 50%;
 
         &:hover {
-            transform: scale(1.05);
+            transform: scale(1.01);
         }
 
         .userArea__profilePictureArea__profilePicuture {
@@ -41,9 +41,9 @@
 }
 
 .userArea__ProjectUl {
-    @include projectLi;
     display: flex;
 
+    justify-content: flex-start;
     
     width: 90%;
     margin-top: 45px;
@@ -51,8 +51,11 @@
     color: $thirdColor;
     cursor: pointer;
     
+    padding: 0;
+
     li {
-        margin-right: 30px;
+        margin-right: 25px;
+        font: 600 23px "Source Sans Pro", sans-serif;
     }
 }
 

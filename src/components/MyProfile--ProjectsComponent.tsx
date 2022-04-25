@@ -76,7 +76,7 @@ const MyProfile__ProjectsComponent = ({
             color: subPage == "myProjects" ? "white" : "",
           }}
         >
-          My Projects
+          MY PROJECTS
         </li>
         <li
           onClick={() => subPageChager("myClients")}
@@ -84,7 +84,7 @@ const MyProfile__ProjectsComponent = ({
             color: subPage == "myClients" ? "white" : "",
           }}
         >
-          My Clients
+          MY CLIENTS
         </li>
       </ul>
 
