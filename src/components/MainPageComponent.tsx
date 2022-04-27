@@ -1,8 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Dependencies
-import React from "react";
+import React, { useState } from "react";
 
 // Interfaces
 import IMainPage from "../interfaces/IMainPage";
+
+// Contexts
+import { getWhiteThemeState } from "../contexts/whiteThemeContext";
 
 // Components
 import { DashboardComponent } from "./DashboardComponent";
@@ -16,6 +20,7 @@ import iconsPath from "../defaults/iconsPath";
 
 // CSS
 import "./style/MainPageComponent.scss";
+import colors from "../defaults/colors";
 
 // Others
 const pages = {
@@ -29,8 +34,21 @@ const pages = {
 };
 
 const MainPageComponent = ({ namePage }: IMainPage) => {
+  const [whiteTheme, setWhiteTheme] = getWhiteThemeState() as [
+    boolean,
+    React.Dispatch<boolean>,
+  ];
+
   return (
-    <section className="mainPage">
+    <section
+      className="mainPage"
+      style={{
+        transition: "all ease 0.5s",
+        backgroundColor: whiteTheme
+          ? colors.primaryColorWhiteTheme
+          : colors.primaryColor,
+      }}
+    >
       <SecondNavComponent />
 
       <div className="mainPage__ContentArea">
