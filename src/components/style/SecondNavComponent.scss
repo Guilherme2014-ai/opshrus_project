@@ -6,8 +6,6 @@
     padding-right: 60px;
     font-family: 'Lato', sans-serif;
 
-    transition: all ease 0.6s;
-
     height: 90px;
 
     position: fixed;
@@ -17,8 +15,6 @@
     bottom: 801px;
 
     h2 {
-        color: white;
-
         font-size: 1.6pc;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 700;
@@ -27,7 +23,6 @@
     div {
         display: flex;
         align-items: center;
-        color: white;
 
         small {
             margin-right: 30px;

@@ -17,6 +17,7 @@ import { BrowserPage } from "./BrowserPage";
 
 // Defaults
 import iconsPath from "../defaults/iconsPath";
+import { defaultsTransition } from "../defaults/pre-styles";
 
 // CSS
 import "./style/MainPageComponent.scss";
@@ -43,7 +44,7 @@ const MainPageComponent = ({ namePage }: IMainPage) => {
     <section
       className="mainPage"
       style={{
-        transition: "all ease 0.5s",
+        transition: defaultsTransition.themeChange,
         backgroundColor: whiteTheme
           ? colors.primaryColorWhiteTheme
           : colors.primaryColor,

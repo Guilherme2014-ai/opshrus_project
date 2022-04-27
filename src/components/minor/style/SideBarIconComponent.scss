@@ -9,8 +9,6 @@
 
     margin-top: 20px;
 
-    transition: all ease 0.3s;
-
     cursor: pointer;
 
     small {
@@ -29,12 +27,11 @@
     .sideBar__icon {
         border-radius: 5px;
         padding: 7px;
-        background-color: $secondColor;
     }
 
     .sideBar__icon-selected {
         border-radius: 5px;
         padding: 7px;
-        background-color: $selectedIconSideBar;
+        background-color: $selectedIconSideBar !important;
     }
 }
