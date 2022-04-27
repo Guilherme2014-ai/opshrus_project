@@ -1,6 +1,9 @@
 // Dependencies
-import React from "react";
+import React, { Dispatch } from "react";
 import { ProjectsComponent } from "./minor/ProjectsComponent";
+
+// Contexts
+import { getWhiteThemeState } from "../contexts/whiteThemeContext";
 
 // Components
 import { TopicsScrollComponent } from "./minor/TopicsScrollComponent";
@@ -8,10 +11,26 @@ import { TopicsScrollComponent } from "./minor/TopicsScrollComponent";
 // CSS
 import "./style/BrowserPage.scss";
 
+import { defaultsTransition } from "../defaults/pre-styles";
+import colors from "../defaults/colors";
+
 const BrowserPage = () => {
+  const [whiteTheme, setWhiteTheme] = getWhiteThemeState() as [
+    boolean,
+    Dispatch<boolean>,
+  ];
+
+  const titlesPreConfigThemeChanger = {
+    transition: defaultsTransition.themeChange,
+    color: whiteTheme ? colors.selectedIconSideBar : "white",
+  };
+
   return (
     <section className="mainSearch">
-      <h1 className="mainSearch__discoverTitle">
+      <h1
+        className="mainSearch__discoverTitle"
+        style={{ ...titlesPreConfigThemeChanger }}
+      >
         <strong>Discover</strong>
       </h1>
       <TopicsScrollComponent />
@@ -19,7 +38,12 @@ const BrowserPage = () => {
       <br />
       <br />
 
-      <h1 className="mainSearch__projectBrowserTitle">Project Browser</h1>
+      <h1
+        className="mainSearch__projectBrowserTitle"
+        style={{ ...titlesPreConfigThemeChanger }}
+      >
+        Project Browser
+      </h1>
       <div className="mainSearch__projectsArea">
         <ProjectsComponent done={null} background={false} />
       </div>
