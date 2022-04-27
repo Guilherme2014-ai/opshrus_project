@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Dependencies
 import React, { Dispatch } from "react";
 import { ProjectsComponent } from "./minor/ProjectsComponent";
