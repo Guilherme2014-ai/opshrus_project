@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Dependencies
-import React, { useState } from "react";
+import React, { Dispatch, useState } from "react";
 import { idUniqueV2 } from "id-unique-protocol";
 
 // Components
@@ -20,13 +20,20 @@ import { getUserSessionState } from "../contexts/userSessionStateContext";
 import getSessionUserProvider from "../modules/getSessionUserProvider";
 
 // Defaults
+import { defaultsTransition } from "../defaults/pre-styles";
 import profilePicture from "../defaults/profilePicture";
 import iconsPath from "../defaults/iconsPath";
 
 // CSS
 import "./style/EditProfileComponent.scss";
+import { getWhiteThemeState } from "../contexts/whiteThemeContext";
+import colors from "../defaults/colors";
 
 const EditProfileComponent = () => {
+  const [whiteTheme, setWhiteTheme] = getWhiteThemeState() as [
+    boolean,
+    Dispatch<boolean>,
+  ];
   const [stringfiedUser, setStringfiedUser] = getUserSessionState();
   const userSession = getSessionUserProvider(stringfiedUser);
 
@@ -89,7 +96,15 @@ const EditProfileComponent = () => {
       <h2 className="editProfileContainer__title">
         <strong>EDIT PROFILE</strong>
       </h2>
-      <div className="editProfileContainer">
+      <div
+        className="editProfileContainer"
+        style={{
+          transition: defaultsTransition.themeChange,
+          backgroundColor: whiteTheme
+            ? colors.secondColorWhite
+            : colors.secondColor,
+        }}
+      >
         <div className="editProfileContainer--firstArea subArea">
           <form className="editProfileContainer--firstArea__form">
             {inputs.map((input: input) => {
