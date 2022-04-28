@@ -1,9 +1,10 @@
 .signUp {
+    display: flex;
+
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(90deg, rgba(51,55,66,1) 0%, rgb(75, 75, 75) 100%);
-    display: flex;
-    justify-content: center;
+    
+    background-color: #30343f;
     align-items: center;
     flex-direction: column;
     color: white;
@@ -13,9 +14,12 @@
     overflow: hidden;
 
     h2, h3 {
-        font-weight: 600;
+        font: 800 40px "Source Sans Pro", sans-serif;
         padding: 1%;
         z-index: 2;
+    }
+    h3 {
+        font-size: 20px;
     }
     
     @media only screen and (max-width: 350px) {
@@ -30,19 +34,21 @@
     }
 
     &__formContainer {
-        min-height: 1vh;
-        min-width: 1vw;
         position: relative;
         z-index: 2;
         padding: 3% !important;
+        overflow: hidden;
+        margin: 0 25px;
+
+        border-radius: 20px;
+
+        background: linear-gradient(100deg, #6f7481, #464b58, #30343f);
 
         @media only screen and (max-height: 800px) {
             min-height: 450px;
-            width: 460px;
         }
 
         @media only screen and (max-width: 550px) {
-            width: 100%;
             min-height: 250px;
             padding: 6% !important;
         }
@@ -51,9 +57,9 @@
         form {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            height: 100%;
-
+            width: 340px;
+            overflow: hidden;
+            
             .buttons {
                 width: 100%;
                 display: flex;
@@ -95,6 +101,8 @@
                 outline: none;
                 border: none;
                 padding: 2% 2% 2% 6%;
+
+                height: 35px;
 
                 &::placeholder {
                     text-transform: uppercase;

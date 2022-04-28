@@ -9,9 +9,9 @@ import { Circle } from "./minor/Circle";
 // CSS
 import "./style/SignUpComponent.scss";
 
-export default function SignUpComponent(namePage: any) {
+export default function SignUpComponent() {
   return (
-    <div className="signUp">
+    <section className="signUp">
       <h2>Sign Up</h2>
       <div className="signUp__formContainer opaque">
         <form>
@@ -92,6 +92,6 @@ export default function SignUpComponent(namePage: any) {
           left="82%"
         />
       </div>
-    </div>
+    </section>
   );
 }
