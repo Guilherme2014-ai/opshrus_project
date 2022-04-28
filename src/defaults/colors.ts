@@ -5,4 +5,5 @@ export default {
   thirdColor: "#979cac",
 
   primaryColorWhiteTheme: "#FFFFFF",
+  secondColorWhite: "#f3f3f3",
 };

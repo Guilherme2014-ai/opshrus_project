@@ -4,6 +4,7 @@ import React, { useState, Dispatch } from "react";
 
 // Contexts
 import getSessionUserProvider from "../modules/getSessionUserProvider";
+import { getWhiteThemeState } from "../contexts/whiteThemeContext";
 
 // INterfaces
 import IUserSession from "../interfaces/IUserSession";
@@ -35,6 +36,10 @@ const MyProfile__ProjectsComponent = ({
 }: {
   subPageStateParam: [TProfileSubPages, Dispatch<TProfileSubPages>];
 }) => {
+  const [whiteTheme, setWhiteTheme] = getWhiteThemeState() as [
+    boolean,
+    Dispatch<boolean>,
+  ];
   const [subPageState, setSubPageState] = subPageStateParam;
   const [userStringfied, setUserStringfied] = getUserSessionState();
   const [subPage, setSubPage] = useState("myProjects") as unknown as [
@@ -50,7 +55,12 @@ const MyProfile__ProjectsComponent = ({
 
   return (
     <div>
-      <div className="userArea">
+      <div
+        className="userArea"
+        style={{
+          color: whiteTheme ? colors.selectedIconSideBar : "white",
+        }}
+      >
         <div className="userArea__profilePictureArea">
           <Avatar
             className="userArea__profilePictureArea__profilePicuture"
@@ -73,7 +83,13 @@ const MyProfile__ProjectsComponent = ({
         <li
           onClick={() => subPageChager("myProjects")}
           style={{
-            color: subPage == "myProjects" ? "white" : "",
+            color: !whiteTheme
+              ? subPage == "myProjects"
+                ? "white"
+                : colors.thirdColor
+              : subPage == "myProjects"
+              ? colors.selectedIconSideBar
+              : colors.thirdColor,
           }}
         >
           MY PROJECTS
@@ -81,7 +97,13 @@ const MyProfile__ProjectsComponent = ({
         <li
           onClick={() => subPageChager("myClients")}
           style={{
-            color: subPage == "myClients" ? "white" : "",
+            color: !whiteTheme
+              ? subPage == "myClients"
+                ? "white"
+                : colors.thirdColor
+              : subPage == "myClients"
+              ? colors.selectedIconSideBar
+              : colors.thirdColor,
           }}
         >
           MY CLIENTS

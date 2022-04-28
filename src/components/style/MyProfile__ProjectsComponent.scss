@@ -9,8 +9,6 @@
     height: 200px;
     width: 100%;
 
-    color: white;
-
     margin-top: 50px;
 
     .userArea__profilePictureArea {
@@ -36,6 +34,8 @@
         h1 {
             font-size: 2.5pc;
             margin-bottom: 20px;
+
+            font: 600 40px "Source Sans Pro", sans-serif;
         }
     }
 }

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // Dependencies
-import React from "react";
+import React, { Dispatch } from "react";
 import { idUniqueV2 } from "id-unique-protocol";
 
 // Interfaces
@@ -17,6 +17,7 @@ import getSessionUserProvider from "../../modules/getSessionUserProvider";
 
 // CSS
 import "./style/ProjectsComponent.scss";
+import { getWhiteThemeState } from "../../contexts/whiteThemeContext";
 
 const ProjectsComponent = ({
   done,
@@ -25,6 +26,10 @@ const ProjectsComponent = ({
   done: boolean | null;
   background?: boolean;
 }) => {
+  const [whiteTheme, setWhiteTheme] = getWhiteThemeState() as [
+    boolean,
+    Dispatch<boolean>,
+  ];
   const [userStringfied, setUserStringfied] = getUserSessionState();
   const userSession = getSessionUserProvider(userStringfied) || null;
 
@@ -65,7 +70,12 @@ const ProjectsComponent = ({
     <div
       className="projectsArea"
       style={{
-        backgroundColor: background === false ? "" : colors.secondColor,
+        backgroundColor:
+          background === false
+            ? ""
+            : whiteTheme
+            ? colors.secondColorWhite
+            : colors.secondColor,
       }}
     >
       {projectsColumns && projects ? (
