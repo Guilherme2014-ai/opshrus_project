@@ -36,8 +36,8 @@ export default function SignUpComponent() {
             <input type="text" placeholder="abc123" />
           </label>
           <div className="buttons">
-            <button type="submit">Confirm</button>
             <button type="submit">Cancel</button>
+            <button type="submit">Confirm</button>
           </div>
         </form>
       </div>

@@ -28,9 +28,6 @@ const CalendarComponent = ({
     TMonths,
     Dispatch<TMonths>,
   ];
-  const [specialMonthActive, setSpecialMonthActive] = useState(
-    null,
-  ) as unknown as ["first" | "last", Dispatch<"first" | "last">];
   const [createScheduleDay, setCreateScheduleDay] = useState(
     null,
   ) as unknown as [null | number, Dispatch<null | number>];
@@ -65,6 +62,8 @@ const CalendarComponent = ({
   }
 
   function jumpWithTheButton(button: "left" | "right") {
+    console.log("Apertou", button);
+
     const monthsWrapper__monthsElement = document.getElementById(
       "monthsWrapper__months",
     ) as HTMLElement;
@@ -109,10 +108,7 @@ const CalendarComponent = ({
             </svg>
           </div>
           <div className="monthsWrapper__months" id="monthsWrapper__months">
-            {calendarData.months.map(({ name }, index) => {
-              const lastMonth = index === calendarData.months.length - 1;
-              const firstMonth = index === 0;
-
+            {calendarData.months.map(({ name }) => {
               const monthNameLowerCase = name.toLocaleLowerCase() as TMonths;
               const monthNameUpperCase = name.toLocaleUpperCase();
 
@@ -122,7 +118,7 @@ const CalendarComponent = ({
                   key={idUniqueV2()}
                   onClick={() => daysChangerHandler(monthNameLowerCase)}
                   style={{
-                    width: "50%",
+                    width: "100%",
                   }}
                 >
                   <h1

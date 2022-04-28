@@ -58,6 +58,7 @@
             display: flex;
             flex-direction: column;
             width: 340px;
+
             overflow: hidden;
             
             .buttons {
@@ -71,10 +72,8 @@
                     outline: none;
                     border: none;
                     color: orange;
-                    font-weight: 600;
-                    font-family: 'Source Sans Pro';
+                    font: 300 20px 'Source Sans Pro', sans-serif;
                     text-transform: uppercase;
-                    font-size: 20px;
                 }
             }
 
