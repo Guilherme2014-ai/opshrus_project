@@ -1,12 +1,31 @@
-import React from "react";
+// Dependencies
+import React, { useState } from "react";
 import Contact from "./minor/Contact";
 import { FiFacebook, FiMail, FiLinkedin, FiInstagram } from "react-icons/fi";
 
+// CSS
 import "./style/Nav.scss";
 
 export default function Nav() {
+  const [background, setBackground] = useState(false);
+
+  useState(() => {
+    window.addEventListener("scroll", scrollYHandler);
+
+    function scrollYHandler() {
+      const scrollY = window.scrollY;
+
+      scrollY === 0 ? setBackground(false) : setBackground(true);
+    }
+  });
+
   return (
-    <nav>
+    <nav
+      style={{
+        transition: "all ease 1s",
+        backgroundColor: background ? "#715AFF" : "",
+      }}
+    >
       <div className="nav__logo">
         <h1>Contenta</h1>
       </div>
