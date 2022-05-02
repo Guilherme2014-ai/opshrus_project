@@ -18,6 +18,7 @@ const Circle = (circleData: ICircle) => (
       right: circleData.right,
       bottom: circleData.bottom,
       left: circleData.left,
+      position: circleData.position ? circleData.position : "absolute",
     }}
   ></div>
 );

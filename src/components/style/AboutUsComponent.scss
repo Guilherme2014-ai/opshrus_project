@@ -263,44 +263,7 @@
         }
     }
 
-    &__ourWork {
-        position: relative;
-        width: 100%;
-        min-height: 15vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 15%;
-
-        h2 {
-            position: relative;
-        }
-
-        &__container {
-            width: 60vw;
-            min-height: 15vh;
-            margin: 10%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            overflow: hidden;
-            
-
-            &__project {
-                min-height: 170px;
-                min-width: 300px;
-                border-radius: 10px;
-                background: black;
-                
-                
-                &:not(:first-child) {
-                    margin-left: 5%;
-                }
-            }
-        }
-    }
-
+    
     &__workWithUs {
         width: 100%;
         min-height: 15vh;
@@ -350,9 +313,8 @@
                 text-align: center;
                 margin: 2%;
                 margin-top: 6%;
-                filter: none !important;
-                backdrop-filter: none !important;
-
+                
+                
                 &:last-child {
                     color: red !important;
                 }
@@ -372,8 +334,9 @@
                     margin: 5%;
                     color: white;
                 }
-
+                
                 &__wrapper {
+                    @include blurCard();
                     min-width: 200px;
                     height: 200px;
                     display: flex;
@@ -387,6 +350,58 @@
                         opacity: 0.5;
                     }
                 }  
+            }
+        }
+    }
+
+    .aboutUs__joinNetwork__container {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 200px;
+        margin-bottom: 100px;
+
+        .aboutUs__joinNetwork {
+            color: white;
+    
+            width: 600px;
+    
+            .aboutUs__joinNetwork__mainContent{
+                display: flex;
+                
+                width: 100%;
+    
+                .aboutUs__joinNetwork__mainContent__textBox {
+                    width: 500px;
+    
+                    h1 {
+                        font: 800 50px "Source Sans Pro", sans-serif;
+                    }
+    
+                    p {
+                        width: 100%;
+                        font-size: 12px;
+                    }
+                }
+                .aboutUs__joinNetwork__mainContent__circleArea {
+                    width: 100%;
+    
+                    display: flex;
+                    justify-content: flex-end;
+    
+                    .circle {
+                        margin-top: 60px;
+                    }
+                }
+            }
+            .aboutUs__joinNetwork__becameCreator {
+                @include blurCard();
+
+                text-align: center;
+                padding: 7px;
+                border-radius: 14px;
+
+                box-shadow: #4838af 0px 10px 40px;
             }
         }
     }

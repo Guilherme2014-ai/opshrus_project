@@ -6,4 +6,6 @@ export default interface ICircle {
   right: string;
   bottom: string;
   left: string;
+
+  position?: "relative" | "absolute" | "static";
 }

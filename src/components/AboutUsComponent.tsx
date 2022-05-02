@@ -245,23 +245,6 @@ const AboutUsComponent = () => {
         </div>
       </div>
       <div className="aboutUs__whyUs__circleContainer"></div>
-      <div className="aboutUs__ourWork">
-        <h2>Our Work</h2>
-        <div className="aboutUs__ourWork__container">
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-          <div className="aboutUs__ourWork__container__project"></div>
-        </div>
-      </div>
       <div className="aboutUs__workWithUs">
         <h2>Work With Us</h2>
         <div className="aboutUs__workWithUs__sections">
@@ -320,7 +303,45 @@ const AboutUsComponent = () => {
             </div>
             <p>Kažkas</p>
           </div>
-          <p>Explore</p>
+        </div>
+      </div>
+      <div className="aboutUs__joinNetwork__container">
+        <div className="aboutUs__joinNetwork">
+          <div className="aboutUs__joinNetwork__mainContent">
+            <div className="aboutUs__joinNetwork__mainContent__textBox">
+              <h1>
+                JOIN OUR <br /> NETWORK
+              </h1>
+              <p>
+                It’s a big big world, but we have found a way to make it small
+                for you. Contenta has the largest pool of the best talents from
+                across the globe, and we offer you a direct portal to each of
+                them. Whether you need someone to help you set up your business,
+                find financing solutions, or optimize your processes, we’ve got
+                you covered, whatever stage of growth you are in.
+                <br />
+                <br />
+                If you are looking for a great career opportunity with unlimited
+                potential for growth, join us now. You can work with amazing
+                clients from all over the world at your own pace, and from
+                anywhere you want.
+              </p>
+            </div>{" "}
+            <div className="aboutUs__joinNetwork__mainContent__circleArea">
+              <Circle
+                gradientBackground="linear-gradient(38deg, rgba(177,199,255,1) 0%, rgba(8,122,255,1) 100%)"
+                diameter="300px"
+                top="0"
+                right="0"
+                bottom="0"
+                left="0"
+                position="static"
+              />
+            </div>
+          </div>
+          <div className="aboutUs__joinNetwork__becameCreator">
+            <span>BECOME A CONTENT CREATOR</span>
+          </div>
         </div>
       </div>
     </section>
