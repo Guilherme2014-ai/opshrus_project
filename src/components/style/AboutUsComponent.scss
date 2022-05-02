@@ -164,9 +164,9 @@
 
         @media only screen and (max-width: 1140px) {
             .opaque {
-                width: 100%;
+                width: 90%;
                 padding: 0;
-                margin: 5% 0 0 0;
+                margin: 5% 10px;
             }
 
             p {
@@ -189,7 +189,6 @@
 
         #jobondemand {
             @include blurCard;
-            margin-left: 10%;
 
             @media only screen and (max-width: 1140px) {
                 margin: 0;
