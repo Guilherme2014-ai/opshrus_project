@@ -298,9 +298,7 @@ const AboutUsComponent = () => {
           </div>
 
           <div className="aboutUs__workWithUs__sections__section">
-            <div className="aboutUs__workWithUs__sections__section__wrapper opaque">
-              <BsHourglassSplit />
-            </div>
+            <div className="aboutUs__workWithUs__sections__section__wrapper opaque"></div>
             <p>Kažkas</p>
           </div>
         </div>
