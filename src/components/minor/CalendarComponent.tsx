@@ -91,7 +91,10 @@ const CalendarComponent = ({
             style={{
               position: "absolute",
               color: "red",
-              transform: "translateX(-50px) translateY(-5px)",
+              top: "-7px",
+              right: "0",
+              left: "-20px",
+              width: "40px",
             }}
             className="monthsWrapper__buttonWrapper"
             onClick={() => jumpWithTheButton("left")}
@@ -136,27 +139,28 @@ const CalendarComponent = ({
               );
             })}
           </div>
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            color: "red",
-            right: "90px",
-            transform: "translateX(5px) translateY(-5px)",
-          }}
-          className="monthsWrapper__buttonWrapper"
-          onClick={() => jumpWithTheButton("right")}
-        >
-          <svg
-            key={idUniqueV2()}
-            xmlns="http://www.w3.org/2000/svg"
-            width="35"
-            height="36"
-            fill="white"
-            viewBox="0 0 16 16"
+          <div
+            style={{
+              position: "absolute",
+              color: "red",
+              top: "-7px",
+              right: "0",
+              left: "190px",
+            }}
+            className="monthsWrapper__buttonWrapper"
+            onClick={() => jumpWithTheButton("right")}
           >
-            <path d={iconsPath.arrowRight} />
-          </svg>
+            <svg
+              key={idUniqueV2()}
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="36"
+              fill="white"
+              viewBox="0 0 16 16"
+            >
+              <path d={iconsPath.arrowRight} />
+            </svg>
+          </div>
         </div>
       </div>
 
