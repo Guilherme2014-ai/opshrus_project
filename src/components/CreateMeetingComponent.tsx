@@ -1,11 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Dependencies
-import React from "react";
+import React, { Dispatch } from "react";
 
 // Defaults
 import months from "./defaults/months";
+import colors from "../defaults/colors";
 
 // Interfaces
 import { IMonth } from "../interfaces/ICalendarData";
+
+// Context
+import { getWhiteThemeState } from "../contexts/whiteThemeContext";
 
 // Components
 import { CalendarComponent } from "./minor/CalendarComponent";
@@ -18,8 +23,22 @@ import "./style/CreateMeetingComponent.scss";
 // Refatorar estrutura da página, de forma que os inputs sigam o mesmo tamanho que os meses
 
 const CreateMeetingComponent = () => {
+  const [whiteTheme, setWhiteTheme] = getWhiteThemeState() as [
+    boolean,
+    Dispatch<boolean>,
+  ];
+
+  const lettersPreset = {
+    color: whiteTheme ? "white" : colors.selectedIconSideBar,
+  };
+
   return (
-    <section className="CreateMeetingMain">
+    <section
+      className="CreateMeetingMain"
+      style={{
+        background: whiteTheme ? "#30343F" : "#FFFFFF",
+      }}
+    >
       <Circle
         gradientBackground="linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)"
         diameter="92.99px"
@@ -69,11 +88,25 @@ const CreateMeetingComponent = () => {
         left="20%"
       />
       <div className="CreateMeetingMain__MeetingArea">
-        <h1 className="CreateMeetingMain__MeetingArea_boxTitle">
+        <h1
+          className="CreateMeetingMain__MeetingArea_boxTitle"
+          style={{ ...lettersPreset }}
+        >
           <strong>BOOK A VIRTUAL MEETING</strong>
         </h1>
-        <div className="CreateMeetingMain__MeetingArea_box">
-          <div className="CreateMeetingMain__MeetingArea_box__SUB CreateMeetingMain__MeetingArea_box__inputs">
+        <div
+          className="CreateMeetingMain__MeetingArea_box"
+          style={{
+            background: whiteTheme
+              ? "linear-gradient(130deg, rgba(206, 206, 206, 0.5), rgba(206, 206, 206, 0.1))"
+              : "linear-gradient(130deg, rgba(206, 206, 206, 0.5), rgba(206, 206, 206, 0.1))",
+            boxShadow: whiteTheme ? "" : "rgb(144, 144, 144) 4px 4px 25px",
+          }}
+        >
+          <div
+            className="CreateMeetingMain__MeetingArea_box__SUB CreateMeetingMain__MeetingArea_box__inputs"
+            style={{ ...lettersPreset }}
+          >
             <div>
               <label htmlFor="complete_name">Full Name</label>
               <input

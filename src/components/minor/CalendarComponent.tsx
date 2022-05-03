@@ -8,6 +8,9 @@ import month_position from "../../defaults/month_position";
 import iconsPath from "../../defaults/iconsPath";
 import colors from "../../defaults/colors";
 
+// Contexts
+import { getWhiteThemeState } from "../../contexts/whiteThemeContext";
+
 // Components
 import { ScheduleCreatorComponent } from "./ScheduleCreatorComponent";
 
@@ -32,6 +35,10 @@ const CalendarComponent = ({
     null,
   ) as unknown as [null | number, Dispatch<null | number>];
   const jumpUnity = 100;
+  const [whiteTheme, setWhiteTheme] = getWhiteThemeState() as [
+    boolean,
+    Dispatch<boolean>,
+  ];
 
   useEffect(() => {
     const monthsWrapper__monthsElement = document.getElementById(
@@ -180,10 +187,13 @@ const CalendarComponent = ({
               <div
                 className="calendar__days__day"
                 style={{
+                  boxShadow: whiteTheme
+                    ? ""
+                    : "rgb(124, 122, 122) 0px 6px 22px",
                   background:
                     createScheduleDay === day
                       ? colors.selectedIconSideBar
-                      : "linear-gradient(120deg, #b6c5ca, #759eaa)",
+                      : "linear-gradient(100deg, rgba(206, 206, 206, 0.5), rgba(206, 206, 206, 0.1))",
                 }}
                 onClick={() => {
                   isScheduleActive

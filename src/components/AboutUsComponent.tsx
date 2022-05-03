@@ -8,11 +8,7 @@ import { Circle } from "./minor/Circle";
 import { TiVideo, TiWorld } from "react-icons/ti";
 import { BiMoviePlay } from "react-icons/bi";
 import { HiPhotograph } from "react-icons/hi";
-import {
-  BsPencil,
-  BsEmojiSunglassesFill,
-  BsHourglassSplit,
-} from "react-icons/bs";
+import { BsPencil, BsEmojiSunglassesFill } from "react-icons/bs";
 import { FaMeteor } from "react-icons/fa";
 
 // CSS
@@ -337,7 +333,10 @@ const AboutUsComponent = () => {
               />
             </div>
           </div>
-          <div className="aboutUs__joinNetwork__becameCreator">
+          <div
+            className="aboutUs__joinNetwork__becameCreator"
+            onClick={() => navigate("/signup")}
+          >
             <span>BECOME A CONTENT CREATOR</span>
           </div>
         </div>

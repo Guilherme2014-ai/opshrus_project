@@ -388,7 +388,7 @@
     
                     display: flex;
                     justify-content: flex-end;
-    
+
                     .circle {
                         margin-top: 60px;
                     }
@@ -397,11 +397,19 @@
             .aboutUs__joinNetwork__becameCreator {
                 @include blurCard();
 
+                transition: all ease 0.5s;
+
                 text-align: center;
                 padding: 7px;
                 border-radius: 14px;
 
                 box-shadow: #4838af 0px 10px 40px;
+
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.02);
+                }
             }
         }
     }
