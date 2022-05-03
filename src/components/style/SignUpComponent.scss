@@ -4,7 +4,6 @@
     width: 100vw;
     height: 100vh;
     
-    background-color: #30343f;
     align-items: center;
     flex-direction: column;
     color: white;
@@ -42,8 +41,6 @@
 
         border-radius: 20px;
 
-        background: linear-gradient(100deg, #6f7481, #464b58, #30343f);
-
         @media only screen and (max-height: 800px) {
             min-height: 450px;
         }
@@ -71,8 +68,7 @@
                     background: none;
                     outline: none;
                     border: none;
-                    color: orange;
-                    font: 300 20px 'Source Sans Pro', sans-serif;
+                    font: 400 20px 'Source Sans Pro', sans-serif;
                     text-transform: uppercase;
                 }
             }

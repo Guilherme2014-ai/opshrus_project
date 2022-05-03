@@ -161,7 +161,10 @@ const CreateMeetingComponent = () => {
             />
             <br />
             <br />
-            <div className="CreateMeetingMain__MeetingArea_box__calendar__buttons">
+            <div
+              className="CreateMeetingMain__MeetingArea_box__calendar__buttons"
+              style={{ ...lettersPreset }}
+            >
               <span>CANCEL</span>
               <span>CONFIRM</span>
             </div>
@@ -169,7 +172,7 @@ const CreateMeetingComponent = () => {
         </div>
       </div>
       <br />
-      <h1 className="CreateMeetingMain__rodape">
+      <h1 className="CreateMeetingMain__rodape" style={{ ...lettersPreset }}>
         <strong>CONTENTA</strong>
       </h1>
     </section>

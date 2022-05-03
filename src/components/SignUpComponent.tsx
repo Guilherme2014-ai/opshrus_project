@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Dependencies
-import React from "react";
+import React, { Dispatch } from "react";
+import { getWhiteThemeState } from "../contexts/whiteThemeContext";
+import colors from "../defaults/colors";
 
 // Componentes
 import { Circle } from "./minor/Circle";
@@ -10,11 +12,32 @@ import { Circle } from "./minor/Circle";
 import "./style/SignUpComponent.scss";
 
 export default function SignUpComponent() {
+  const [whiteTheme, setWhiteTheme] = getWhiteThemeState() as [
+    boolean,
+    Dispatch<boolean>,
+  ];
+  const lettersPreset = {
+    color: whiteTheme ? "white" : colors.selectedIconSideBar,
+  };
+
   return (
-    <section className="signUp">
-      <h2>Sign Up</h2>
-      <div className="signUp__formContainer opaque">
-        <form>
+    <section
+      className="signUp"
+      style={{
+        backgroundColor: whiteTheme ? "#30343f" : "#FFFFFF",
+      }}
+    >
+      <h2 style={{ ...lettersPreset }}>Sign Up</h2>
+      <div
+        className="signUp__formContainer opaque"
+        style={{
+          boxShadow: whiteTheme ? "" : "rgb(136, 136, 136) 0px 0px 20px",
+          background: whiteTheme
+            ? "linear-gradient(100deg, #6f7481, #464b58, #30343f)"
+            : "white",
+        }}
+      >
+        <form style={{ ...lettersPreset }}>
           <label>
             First Name
             <input type="text" placeholder="First" />
@@ -36,12 +59,16 @@ export default function SignUpComponent() {
             <input type="text" placeholder="abc123" />
           </label>
           <div className="buttons">
-            <button type="submit">Cancel</button>
-            <button type="submit">Confirm</button>
+            <button style={{ ...lettersPreset }} type="submit">
+              Cancel
+            </button>
+            <button style={{ ...lettersPreset }} type="submit">
+              Confirm
+            </button>
           </div>
         </form>
       </div>
-      <h3>Contenta</h3>
+      <h3 style={{ ...lettersPreset }}>Contenta</h3>
       <div className="signUp__circleBackground">
         <Circle
           gradientBackground="linear-gradient(210.31deg, #FF6108 -11.63%, #FFE608 105.87%)"

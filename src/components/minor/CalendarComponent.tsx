@@ -136,7 +136,9 @@ const CalendarComponent = ({
                     style={{
                       color:
                         currentMonth == monthNameLowerCase
-                          ? "white"
+                          ? whiteTheme
+                            ? "white"
+                            : colors.selectedIconSideBar
                           : "#A64253",
                     }}
                   >
