@@ -48,7 +48,15 @@ const SideBarIconComponent = ({
         >
           <path d={svgLink} />
         </svg>
-        <small>{title}</small>
+        <small
+          className={
+            whiteTheme
+              ? "sideBar__iconArea__title--whiteTheme"
+              : "sideBar__iconArea__title--blackTheme"
+          }
+        >
+          {title}
+        </small>
       </div>
     </Link>
   );

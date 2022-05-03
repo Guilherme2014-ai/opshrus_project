@@ -5,6 +5,7 @@ import React, { Dispatch } from "react";
 // Defaults
 import months from "./defaults/months";
 import colors from "../defaults/colors";
+import { defaultsTransition } from "../defaults/pre-styles";
 
 // Interfaces
 import { IMonth } from "../interfaces/ICalendarData";
@@ -29,6 +30,7 @@ const CreateMeetingComponent = () => {
   ];
 
   const lettersPreset = {
+    transition: defaultsTransition.themeChange,
     color: whiteTheme ? "white" : colors.selectedIconSideBar,
   };
 
@@ -36,6 +38,7 @@ const CreateMeetingComponent = () => {
     <section
       className="CreateMeetingMain"
       style={{
+        transition: defaultsTransition.themeChange,
         background: whiteTheme ? "#30343F" : "#FFFFFF",
       }}
     >

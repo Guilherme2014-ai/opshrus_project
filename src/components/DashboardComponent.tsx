@@ -1,5 +1,9 @@
 // Dependencies
 import React, { Dispatch, useState } from "react";
+import { getWhiteThemeState } from "../contexts/whiteThemeContext";
+
+// Defaults
+import colors from "../defaults/colors";
 
 // Components
 import { ProjectsComponent } from "./minor/ProjectsComponent";
@@ -20,6 +24,14 @@ const DashboardComponent = () => {
     TSubPages,
     Dispatch<TSubPages>,
   ];
+  const [whiteTheme, setWhiteTheme] = getWhiteThemeState() as [
+    boolean,
+    Dispatch<boolean>,
+  ];
+
+  const lettersPreset = {
+    color: whiteTheme ? colors.selectedIconSideBar : "white",
+  };
 
   function subPageChager(page: TSubPages) {
     setSubPage(page);
@@ -27,14 +39,19 @@ const DashboardComponent = () => {
 
   return (
     <div className="mainDashboard__ContentArea__ProjectsDashboard">
-      <h1 className="dashboard__h1">
+      <h1 className="dashboard__h1" style={{ ...lettersPreset }}>
         <strong>Dashboard</strong>
       </h1>
       <ul>
         <li
           onClick={() => subPageChager("ongoingProjects")}
           style={{
-            color: subPage == "ongoingProjects" ? "white" : "",
+            color:
+              subPage == "ongoingProjects"
+                ? whiteTheme
+                  ? colors.selectedIconSideBar
+                  : "#FFFFFF"
+                : colors.thirdColor,
           }}
         >
           Ongoing Projects
@@ -42,7 +59,12 @@ const DashboardComponent = () => {
         <li
           onClick={() => subPageChager("completeProjects")}
           style={{
-            color: subPage == "completeProjects" ? "white" : "",
+            color:
+              subPage == "completeProjects"
+                ? whiteTheme
+                  ? colors.selectedIconSideBar
+                  : "#FFFFFF"
+                : colors.thirdColor,
           }}
         >
           Complete Projects
@@ -50,7 +72,12 @@ const DashboardComponent = () => {
         <li
           onClick={() => subPageChager("messages")}
           style={{
-            color: subPage == "messages" ? "white" : "",
+            color:
+              subPage == "messages"
+                ? whiteTheme
+                  ? colors.selectedIconSideBar
+                  : "#FFFFFF"
+                : colors.thirdColor,
           }}
         >
           Messages

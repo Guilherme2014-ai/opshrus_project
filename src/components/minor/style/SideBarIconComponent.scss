@@ -16,8 +16,11 @@
         margin-left: 10px;
     }
     
-    &:hover small {
+    &:hover .sideBar__iconArea__title--blackTheme {
         color: white
+    }
+    &:hover .sideBar__iconArea__title--whiteTheme {
+        color: $selectedIconSideBar;
     }
 
     &:hover {

@@ -4,6 +4,7 @@
 import React, { Dispatch } from "react";
 import { getWhiteThemeState } from "../contexts/whiteThemeContext";
 import colors from "../defaults/colors";
+import { defaultsTransition } from "../defaults/pre-styles";
 
 // Componentes
 import { Circle } from "./minor/Circle";
@@ -17,6 +18,7 @@ export default function SignUpComponent() {
     Dispatch<boolean>,
   ];
   const lettersPreset = {
+    transition: defaultsTransition.themeChange,
     color: whiteTheme ? "white" : colors.selectedIconSideBar,
   };
 
@@ -24,6 +26,7 @@ export default function SignUpComponent() {
     <section
       className="signUp"
       style={{
+        transition: defaultsTransition.themeChange,
         backgroundColor: whiteTheme ? "#30343f" : "#FFFFFF",
       }}
     >
@@ -31,6 +34,7 @@ export default function SignUpComponent() {
       <div
         className="signUp__formContainer opaque"
         style={{
+          transition: defaultsTransition.themeChange,
           boxShadow: whiteTheme ? "" : "rgb(136, 136, 136) 0px 0px 20px",
           background: whiteTheme
             ? "linear-gradient(100deg, #6f7481, #464b58, #30343f)"
